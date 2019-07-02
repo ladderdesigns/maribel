@@ -3,10 +3,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title> Jacob Patel </title>
+	<title> Maribel: MLA Formatter </title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,61 +33,57 @@
 					How It Works
 				</a>
 		
-			<div class="navbar-item has-dropdown is-hoverable">
-				<a class="navbar-link">
-				More Information
-				</a>
-		
-				<div class="navbar-dropdown">
-				<a class="navbar-item">
-					About
-				</a>
-				<a class="navbar-item">
-					Contact
-				</a>
-				<hr class="navbar-divider">
-				<a class="navbar-item">
-					Report an Issue
-				</a>
-				</div>
-			</div>
-				</div>
+				<div class="navbar-item has-dropdown is-hoverable">
+					<a class="navbar-link">
+					More Information
+					</a>
 			
-				<div class="navbar-end">
-				<div class="navbar-item">
-					<div class="buttons">
-					<a class="button is-primary" href="https://www.patreon.com/">
-						<strong>Support</strong>
+					<div class="navbar-dropdown">
+					<a class="navbar-item">
+						About
+					</a>
+					<a class="navbar-item">
+						Contact
+					</a>
+					<hr class="navbar-divider">
+					<a class="navbar-item">
+						Report an Issue
 					</a>
 					</div>
 				</div>
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+						<a class="button is-primary" href="https://www.patreon.com/">
+							<strong>Support</strong>
+						</a>
+						</div>
+					</div>
 				</div>
 			</div>
-		</nav>
+		</div>
+	</nav>
 	<div class="section">
 		<div class="container">
-					<div class="content">
+			<div class="content">
 				<div class="field">
 					<label class="label">Name</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Enter full name">
+						<input class="input" type="text" placeholder="Full Name" value="">
 					</div>
 				</div>
 
 				<div class="field">
 					<label class="label"> Class Name</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="CS 61A">
+						<input class="input" type="text" placeholder="CS 61A" id="className" value="">
 					</div>
 				</div>
-
-				
-
 			
 				<div class="field">
 					<label class="label"> Professor Name</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Dr. Octopus">
+						<input class="input" type="text" placeholder="Dr. Octopus" id="profName" value="">
 					</div>
 				</div>
 				
@@ -94,14 +91,14 @@
 				<div class="field">
 					<label class="label"> Due Date</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="22 September 2004">
+						<input class="input" type="text" placeholder="22 September 2004" id="dueDate" value="23 May 2019">
 					</div>
 				</div>
 
 				<div class="field">
 					<label class="label">Paper Contents</label>
 					<div class="control">
-						<textarea class="textarea" placeholder="Textarea"></textarea>
+						<textarea class="textarea" placeholder="This is the area for text."  id="paperContents"> </textarea>
 					</div>
 				</div>
 
@@ -116,7 +113,7 @@
 
 				<div class="field is-grouped">
 					<div class="control">
-						<button class="button is-link">Generate</button>
+						<button class="button is-link" onclick="generatePaper()">Generate</button>
 					</div>
 					<div class="control">
 						<button class="button is-text">Cancel</button>
@@ -125,6 +122,30 @@
 			</div>
 		</div>
 	</div>
+
+<script>
+
+function getPaperInfo() {
+
+	className = document.getElementById("className").value;
+	profName = document.getElementById("profName").value;
+	dueDate = document.getElementById("dueDate").value;
+	paperContents = document.getElementById("paperContents").value;
+	
+	var paperInfo = [className, profName, dueDate, paperContents];
+
+	return paperInfo
+}
+
+function generatePaper() {
+	
+	var doc = new jsPDF()
+
+	
+}
+
+
+</script>
 </body>
 
 </html>
