@@ -67,9 +67,9 @@
 		<div class="container">
 			<div class="content">
 				<div class="field">
-					<label class="label">Name</label>
+					<label class="label">Student Name</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Full Name" value="">
+						<input class="input" type="text" placeholder="Full Name" id="studentName" value="">
 					</div>
 				</div>
 
@@ -91,7 +91,7 @@
 				<div class="field">
 					<label class="label"> Due Date</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="22 September 2004" id="dueDate" value="23 May 2019">
+						<input class="input" type="text" placeholder="22 September 2004" id="dueDate" value="">
 					</div>
 				</div>
 
@@ -125,24 +125,47 @@
 
 <script>
 
-function getPaperInfo() {
+function setPaperInfo(asomething) {
+	this.shoe = a
+}
 
+function generatePaper() {
+	
+	// Make the paper.
+	var doc = new jsPDF({
+  		orientation: 'portrait',
+  		unit: 'in',
+		format: 'letter'
+	})
+
+	// Set the paper info.
+	studentName = document.getElementById("studentName").value;
 	className = document.getElementById("className").value;
 	profName = document.getElementById("profName").value;
 	dueDate = document.getElementById("dueDate").value;
 	paperContents = document.getElementById("paperContents").value;
 	
-	var paperInfo = [className, profName, dueDate, paperContents];
+	var paperInfo = [studentName, className, profName, dueDate, paperContents];
+	
+	doc.paperInfo = paperInfo
+	alert(doc.paperInfo)
 
-	return paperInfo
+	// Set general paper guidelines.
+	doc.setFontSize(12)
+	doc.pageNumber = 0
+
+	doc.save('two-by-four.pdf')
+	
 }
 
-function generatePaper() {
-	
-	var doc = new jsPDF()
-
-	
+function setPageNumber(currPageNumber) {
+	var fullName = getPaperInfo()[0];
+	alert(fullName)
+	var lastName = fullName.substring((fullName.indexOf(" "))+1,-1);
+	alert(lastName)
 }
+
+
 
 
 </script>
