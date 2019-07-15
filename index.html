@@ -83,7 +83,7 @@
 				<div class="field">
 					<label class="label"> Professor Name</label>
 					<div class="control">
-						<input class="input" type="text" placeholder="Dr. Octopus" id="profName" value="Mr. Nice">
+						<input class="input" type="text" placeholder="Dr. Professor" id="profName" value="Mr. Nice">
 					</div>
 				</div>
 				
@@ -94,6 +94,13 @@
 						<input class="input" type="text" placeholder="22 September 2004" id="dueDate" value="04 July 2019">
 					</div>
 				</div>
+
+				<div class="field">
+						<label class="label"> Paper Title</label>
+						<div class="control">
+							<input class="input" type="text" placeholder="Title of Paper" id="paperTitle" value="Hello">
+						</div>
+					</div>
 
 				<div class="field">
 					<label class="label">Paper Contents</label>
@@ -130,6 +137,7 @@
 	var className = document.getElementById('className').value;
 	var profName = document.getElementById('profName').value;
 	var dueDate = document.getElementById('dueDate').value;
+	var paperTitle = document.getElementById('paperTitle').value;
 	var paperBody = document.getElementById('paperBody').value;
 
 // This is not a constructor.
@@ -142,16 +150,16 @@ function generatePaper() {
 		format: 'letter'
 	})
 
-
-	var paperInfo = [studentName, className, profName, dueDate, paperBody];
+	var paperInfo = [studentName, className, profName, dueDate, paperTitle, paperBody];
 	doc.paperInfo = paperInfo;
 
 	// Set general paper guidelines.
 	doc.setFont('times','normal')
 	doc.setFontSize(12)
 	doc.pageNumber = 0
-	doc.
-	doc.setLineWidth(6.5)
+	//doc.setLineWidth(6.5)
+
+	alert(doc.paperInfo[4])
 
 	//alert(makeLines(paperBody))
 
