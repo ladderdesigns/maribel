@@ -98,7 +98,7 @@
 				<div class="field">
 						<label class="label"> Paper Title</label>
 						<div class="control">
-							<input class="input" type="text" placeholder="Title of Paper" id="paperTitle" value="Hello">
+							<input class="input" type="text" placeholder="Title of Paper" id="paperTitle" value="History of Writing Papers">
 						</div>
 					</div>
 
@@ -123,7 +123,7 @@
 						<button class="button is-link" onclick="generatePaper()">Generate</button>
 					</div>
 					<div class="control">
-						<button class="button is-text">Cancel</button>
+						<button class="button is-text" onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents'])">Clear Fields</button>
 					</div>
 				</div>
 			</div>
@@ -198,8 +198,13 @@ function setPageNumber(currPageNumber) {
 	alert(lastName)
 }
 
+function clearFields(idArray) {
 
-
+	
+	idArray.forEach(id => {
+		document.getElementById(id).value = "";
+	});
+}
 
 </script>
 </body>
