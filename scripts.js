@@ -1,4 +1,4 @@
-// Set the paper info.
+
 var studentName = document.getElementById('studentName').value;
 var className = document.getElementById('className').value;
 var profName = document.getElementById('profName').value;
@@ -63,9 +63,9 @@ String.prototype.isEmpty = function (bodyWord) {
     return (bodyWord.length === 0 || !bodyWord.trim());
 };
 
-function clearInput(idArray) {
-
-    idArray.forEach(id => {
-        document.getElementById(id).value = "";
-    });
+function clearFields(idArray) {
+ 	
+	idArray.forEach(id => {
+		document.getElementById(id).value = "";
+	});
 }
