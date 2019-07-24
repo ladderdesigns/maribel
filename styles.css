@@ -1,3 +1,174 @@
+@font-face {
+	font-family "Oleo Script";
+	src: url(sansation_light.woff);
+}
+
 .field {
 	margin: 7.5%;
+}
+
+body {
+	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+	background-color: #f7f7f7;
+	background-position: top left, top left;
+	background-repeat: repeat-x, repeat;
+	background-size: 100% 30em, auto;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 13pt;
+	color: #696969;
+	font-weight: 300;
+	line-height: 2.25em;
+}
+
+/* Logo */
+
+#logo {
+	display: inline-block;
+	color: white;
+	font-family: 'Oleo Script';
+}
+
+#logo h1 {
+	background: #ff4486;
+	color: #fff;
+	border-radius: 8px;
+	font-family: 'Oleo Script', serif;
+	font-weight: 400;
+	padding: 0.25em 0.2em 0.25em 0.2em;
+	font-size: 3.25em;
+	letter-spacing: 0.05em;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#logo span {
+	font-weight: 800;
+	line-height: 4.5em;
+	letter-spacing: 0.025em;
+	font-size: 0.9em;
+	vertical-align: middle;
+	margin: 0 0 0 1.25em;
+}
+
+#nav {
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-size: 0.9em;
+}
+
+#nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#nav ul li {
+	float: left;
+	line-height: 4.5em;
+	padding-left: 1.5em;
+}
+
+#nav ul li a, #nav ul li span {
+	-moz-transition: background-color .25s ease-in-out;
+	-webkit-transition: background-color .25s ease-in-out;
+	-ms-transition: background-color .25s ease-in-out;
+	transition: background-color .25s ease-in-out;
+	font-weight: 800;
+	letter-spacing: 0.025em;
+	color: #696969;
+	text-decoration: none;
+	border-radius: 6px;
+	padding: 0.5em 1em 0.5em 1em;
+}
+
+#nav ul li>ul {
+	display: none;
+}
+
+#nav ul li:hover a, #nav ul li:hover span {
+	background: #fff;
+}
+
+#nav ul li.active a, #nav ul li.active span {
+	background: #fff;
+}
+
+#nav ul li.current a {
+	background: #444;
+	color: #fff;
+}
+
+/* Wrappers */
+
+#header-wrapper {
+	padding: 3em 0 1.5em 0;
+}
+
+#banner-wrapper {
+	padding: 0 15px 0 15px;
+}
+
+#features-wrapper {
+	padding: 0 15px 40px 15px;
+}
+
+#main-wrapper, #footer-wrapper {
+	padding: 40px 30px 40px 30px;
+}
+
+/* Logo */
+
+#logo h1 {
+	font-size: 2.75em;
+	padding: 0.2em 0.275em;
+}
+
+#logo span {
+	line-height: 3em;
+}
+
+/* Banner */
+
+#landingBackdrop {
+	background-color: white;
+	padding: 50px;
+	border-radius: 5px;
+}
+
+#banner {
+	text-align: center;
+	padding: 15px 15px 15px 15px;
+	margin: 0 auto !important;
+}
+
+#banner h2 {
+    font-size: 3.5em;
+	margin: 0.1em 0 0.35em 0;
+	color: #444;
+    font-weight: 800;
+}
+
+#banner p {
+    font-size: 2.75em;
+    line-height: 1.35em;
+	margin: 0;
+	font-family: 'Open Sans';
+	color: #696969;
+	font-weight: 300;
+}
+
+#bad {
+	font-weight: lighter;
+}
+
+
+#banner ul {
+	margin: 0;
+}
+
+#banner .button {
+	margin: 0 0 1em 0;
 }
