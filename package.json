@@ -1,0 +1,25 @@
+{
+  "name": "maribel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pdf-guide": "node docs/generate.js",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jseanpatel/Maribel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jseanpatel/Maribel/issues"
+  },
+  "homepage": "https://github.com/jseanpatel/Maribel#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "pdfkit": "^0.10.0"
+  }
+}

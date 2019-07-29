@@ -7,64 +7,94 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+		integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+		crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="scripts.js"></script>
 </head>
 
 <body>
-	<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+	<nav role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="https://bulma.io">
-				<i class="fas fa-place-of-worship fa-2x"></i>
+			<a class="navbar-item" href=>
+				<div id="logo">
+					<h1><a href="index.html" id="logo">Maribel</a> <i class="fas fa-place-of-worship fa-1x"></i></h1>
+					<span>by Jacob Patel </span>
+				</div>
 			</a>
-			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+			<a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+				data-target="navbarBasicExample">
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 				<span aria-hidden="true"></span>
 			</a>
 		</div>
-			
+
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start">
-				<a class="navbar-item" href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html" target="_blank">
+				<a class="navbar-item"
+					href="https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html"
+					target="_blank">
 					MLA Guidelines
 				</a>
 
 				<a class="navbar-item">
 					How It Works
 				</a>
-		
+
 				<div class="navbar-item has-dropdown is-hoverable">
 					<a class="navbar-link">
-					More Information
+						More Information
 					</a>
-			
+
 					<div class="navbar-dropdown">
-					<a class="navbar-item">
-						About
-					</a>
-					<a class="navbar-item" href="https://jacobpa.tel">
-						Contact
-					</a>
-					<hr class="navbar-divider">
-					<a class="navbar-item">
-						Report An Issue
-					</a>
+						<a class="navbar-item">
+							About
+						</a>
+						<a class="navbar-item" href="https://jacobpa.tel">
+							Contact
+						</a>
+						<hr class="navbar-divider">
+						<a class="navbar-item">
+							Report An Issue
+						</a>
 					</div>
 				</div>
 				<div class="navbar-end">
 					<div class="navbar-item">
 						<div class="buttons">
-						<a class="button is-primary" href="https://www.patreon.com/">
-							<strong>Support</strong>
-						</a>
+							<a class="button is-primary" href="https://www.patreon.com/">
+								<strong>Support</strong>
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</nav>
-	<div class="section">
+
+	<section class="hero">
+		<div class="container">
+			<div class="content" id="banner">
+				<div id="landingBackdrop">
+					<div class="leftWords column is-half">
+						<h2> Hi. This is Maribel.</h2>
+						<p> It's a free, all-in-one MLA formatter for your next paper. </p>
+					</div>
+				</div>	
+			</div>
+			<div class="content" id="banner">
+				<div id="landingBackdrop">
+					<div class="leftWords column is-half">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- <div class="section">
 		<div class="container">
 			<div class="content">
 				<div class="field">
@@ -105,6 +135,7 @@
 
 				<div class="field">
 					<label class="label">Paper Contents</label>
+					
 					<div class="control">
 						<textarea class="textarea" placeholder="This is the area for text."  id="paperContents"> </textarea>
 					</div>
@@ -118,7 +149,6 @@
 						</label>
 					</div>
 				</div>
-
 				<div class="field is-grouped">
 					<div class="control">
 						<button class="button is-link" onclick="generatePaper()">Generate</button>
@@ -129,85 +159,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-<script>
-
-	// Set the paper info.
-	var studentName = document.getElementById('studentName').value;
-	var className = document.getElementById('className').value;
-	var profName = document.getElementById('profName').value;
-	var dueDate = document.getElementById('dueDate').value;
-	var paperTitle = document.getElementById('paperTitle').value;
-	var paperBody = document.getElementById('paperBody').value;
-
-// This is not a constructor.
-function generatePaper() {
-	
-	// Make the paper.
-	var doc = new jsPDF({
-  		orientation: 'portrait',
-  		unit: 'in',
-		format: 'letter'
-	})
-
-	var paperInfo = [studentName, className, profName, dueDate, paperTitle, paperBody];
-	doc.paperInfo = paperInfo;
-
-	// Set general paper guidelines.
-	doc.setFont('times','normal')
-	doc.setFontSize(12)
-	doc.pageNumber = 0
-	//doc.setLineWidth(6.5)
-
-	alert(doc.paperInfo[4])
-
-	//alert(makeLines(paperBody))
-
-	doc.text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ', 1, 1)
-	doc.save('two-by-four.pdf')
-	
-}
-
-// Makes lines of no more than 120 chars that can be pasted onto the document - simulating margins.
-function makeLines(paperBody) {
-	var words = paperBody.split()
-	var totalLines = []
-	var y = 0
-	for (var x = 0; x < words.length; x++) {
-		var runningWord = ''
-		if ((words[x].length + charCount) < 120) {
-			runningWord += words[x]
-			y + words[x].length
-		} else {
-			totalLines.push(runningWord)
-			charCount = 0
-		}
-	}
-	return totalLines
-}
-
-// Prototype to check if a character exists at that point.
-String.prototype.isEmpty = function(bodyWord) {
-    return (bodyWord.length === 0 || !bodyWord.trim());
-};
-
-function setPageNumber(currPageNumber) {
-	var fullName = getPaperInfo()[0];
-	alert(fullName)
-	var lastName = fullName.substring((fullName.indexOf(" "))+1,-1);
-	alert(lastName)
-}
-
-function clearFields(idArray) {
-
-	
-	idArray.forEach(id => {
-		document.getElementById(id).value = "";
-	});
-}
-
-</script>
+	</div> -->
 </body>
 
 </html>
