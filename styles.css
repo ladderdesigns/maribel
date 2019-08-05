@@ -1,4 +1,9 @@
-#hiMaribel {
-	font-family: "Open Sans";
+#titleLogo {
+	font-family: "Oleo Script";
+}
+
+/* Why can't I just target the body here. */
+.navbar-item {
+	font-family: 'Open Sans', sans-serif;
 	
 }
