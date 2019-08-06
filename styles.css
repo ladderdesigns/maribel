@@ -1,9 +1,13 @@
 #titleLogo {
 	font-family: "Oleo Script";
+	background: #ff4486;
 }
 
 /* Why can't I just target the body here. */
 .navbar-item {
 	font-family: 'Open Sans', sans-serif;
-	
+}
+
+body {
+
 }
