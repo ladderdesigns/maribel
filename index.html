@@ -8,10 +8,11 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="scripts.js"></script>
 </head>
 
-<body>
+<body class="has-text-grey-dark">
 	<section class="hero">
 		<div class="container">
 			<div class="tile notification is-child">
@@ -19,10 +20,10 @@
 					<div class="navbar-brand">
 						<div class="navbar-item">
 							<div class="buttons">
-								<a class="button is-large is-danger" id="titleLogo">
+								<a class="button is-danger is-size-2" id="titleLogo" style="padding: 10;">
 									Maribel
 								</a>
-								<span class="has-text-weight-bold" id="titleName">by Jacob Patel </span>
+								<span id="titleName" style="margin-bottom: 0.5rem;font-weight: 900">by Jacob Patel </span>
 							</div>
 						</div>
 
@@ -37,7 +38,7 @@
 					<div id="navbarBasicExample" class="navbar-menu has-text-weight-bold">
 						<div class="navbar-start">
 						</div>
-						<div class="navbar-end">
+						<div class="navbar-end" style="font-weight: 900; color: #696969">
 							<div class="navbar-item">
 								<div class="buttons">
 									<a class="button is-light">
@@ -72,45 +73,31 @@
 			</div>
 			<div class="tile notification is-child has-background-white-bis">
 				<div class="columns">
-					<div class="column is-two-thirds">
-						<div class="content is-size-2 ">
-							<h2 id="hiMaribel"> Hi. This is Maribel.</h2>
-							<p> It's a free, all-in-one MLA formatter for your next paper. </p>
+					<div class="column is-half">
+						<div class="content is-size-3 ">
+							<h2 class=" has-text-weight-bold"> Hi. This is Maribel.</h2>
+							<p class="has-text-weight-light"> It's a free, all-in-one MLA formatter for your next paper. </p>
 						</div>
 					</div>
 					<div class="column is-one-third">
-						<button class="button"> Hello click me. </button>
-						<button class="button"> Hello also click me. </button>
+						<button class="button is-large"> Hello click me. </button>
+						<button class="button is-large"> Hello also click me. </button>
 					</div>
 				</div>
 			</div>
 			<div class="tile notification is-child has-background-white-bis">
 				<div class="columns">
 					<div class="column is-half leftWords">
-						<span>
 							<div class="field">
 								<div class="control">
-									<input class="input" type="text" placeholder="Primary input">
+								
+										<input class="input" type="text" placeholder="Primary input">
+								
 								</div>
 							</div>
 							<div class="field">
 								<div class="control">
 									<input class="input" type="text" placeholder="Info input">
-								</div>
-							</div>
-							<div class="field">
-								<div class="control">
-									<input class="input" type="text" placeholder="Success input">
-								</div>
-							</div>
-							<div class="field">
-								<div class="control">
-									<input class="input" type="text" placeholder="Warning input">
-								</div>
-							</div>
-							<div class="field">
-								<div class="control is-expanded">
-									<input class="input" type="text" placeholder="Danger input">
 								</div>
 							</div>
 					</div>
@@ -125,21 +112,26 @@
 								<input class="input" type="text" placeholder="Info input">
 							</div>
 						</div>
+						
+						
+					</div>
+				</div>
+				<div>
+				<div class="columns">
+				<div class="column is-full leftWords">
 						<div class="field">
 							<div class="control">
-								<input class="input" type="text" placeholder="Success input">
+							
+									<input class="input" type="text" placeholder="Primary input">
+							
 							</div>
 						</div>
 						<div class="field">
 							<div class="control">
-								<input class="input" type="text" placeholder="Warning input">
+								<input class="input" type="text" placeholder="Info input">
 							</div>
 						</div>
-						<div class="field">
-							<div class="control is-expanded">
-								<input class="input" type="text" placeholder="Danger input">
-							</div>
-						</div>
+					</div>
 					</div>
 				</div>
 			</div>
