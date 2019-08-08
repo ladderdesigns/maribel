@@ -23,6 +23,5 @@ body {
     background-position: top left, top left;
     background-repeat: repeat-x, repeat;
 	background-size: 100% 30em, auto;
-	color: #696969;
-	
+	scroll-behavior: smooth;
 }
