@@ -22,5 +22,7 @@ body {
     background-color: #f7f7f7;
     background-position: top left, top left;
     background-repeat: repeat-x, repeat;
-    background-size: 100% 30em, auto;
+	background-size: 100% 30em, auto;
+	color: #696969;
+	
 }
