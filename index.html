@@ -10,7 +10,9 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800&display=swap" rel="stylesheet">
-	<script type="text/javascript" src="scripts.js"></script>
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<script type="text/javascript" src="scripts/pdfkit.standalone.js"></script>
+	<script type="text/javascript" src="scripts/blob-stream.js"></script>
 </head>
 
 <body class="has-text-grey-dark">
@@ -64,14 +66,17 @@
 			<div class="tile notification is-child has-background-white-bis">
 				<div class="columns">
 					<div class="column is-half">
-						<div class="content">
-							<h1 class="title is-1" style="""> Hi. This is Maribel. </h2>
-							<p class="subtitle has-text-weight-light is-3" style="color: #696969"> It's a free, all-in-one MLA formatter for your next paper. </p>
+						<div class="content is-size-1">
+							<h2 class="title titleText" style="font-weight: 800; color: #444;"> 
+								Hi. This is Maribel. 
+
+							</h2>
+							<p class="subtitle has-text-weight-light is-2" style="color: #696969"> It's a free, all-in-one MLA formatter for your next paper. </p>
 						</div>
 					</div>
 					<div class="column is-half is-centered has-vertically-aligned-content">
 						<div class="buttons is-centered">
-							<button class="button is-large is-size-4 is-pulled-right"> Let's go! </button>
+							<button class="button is-large is-size-1 has-text-weight-light is-pulled-right"> Let's format! </button>
 						</div>
 					</div>
 				</div>
@@ -131,6 +136,26 @@
 			</div>
 		</div>
 	</section>
+	<section class="section" id="tool">
+		<div class="container">
+			<div class="tile notification is-child is-success">
+				
+				<embed class="embed" src="">
+
+				
+				</embed>
+				<nav class="level is-mobile">
+					<div class="level-left"></div>
+					<div class="level-right">
+						<p class="level-item"><button class="button is-link" onclick="generatePaper()">Generate</button></p>
+						<p class="level-item"><button class="button is-link is-outlined" onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents'])">Clear Fields</button></p>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</section>
+
+
 	<footer class="footer" style="text-align: center">
 		<div class="content">
 			<div class="container">

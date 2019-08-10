@@ -20,15 +20,16 @@ body {
 		font-size: 2.5rem !important;
 	}	
 }
-.navbar-item {
-	font-family: 'Open Sans', sans-serif;
-	background-color: inherit;
+
+.tile.notification.is-child.has-background-white-bis.has-maribelTiles {
+	padding: 4rem;
 }
 
 .navSelect {
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
 	color: #696969 !important;
-	background-color: inherit;
+	background-color: inherit !important;
 }
 
 /* intro */
