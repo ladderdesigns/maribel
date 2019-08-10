@@ -1,20 +1,4 @@
-#titleLogo {
-	font-family: "Oleo Script";
-	background: #ff4486;
-}
-
-/* Why can't I just target the body here. */
-.navbar-item {
-	font-family: 'Open Sans', sans-serif;
-	color: #696969;
-	background-color: inherit;
-}
-
-#navBarSelect {
-	color: #696969;
-	background-color: inherit;
-}
-
+/* page styling */
 body {
 	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url(images/bg01.png);
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url(images/bg01.png);
@@ -22,6 +6,38 @@ body {
     background-color: #f7f7f7;
     background-position: top left, top left;
     background-repeat: repeat-x, repeat;
-	background-size: 100% 30em, auto;
 	scroll-behavior: smooth;
 }
+
+/* navbar */
+#titleLogo {
+	font-family: "Oleo Script";
+	background: #ff4486;
+}
+
+@media all and (min-width: 736px) {
+	#titleLogo {
+		font-size: 2.5rem !important;
+	}	
+}
+.navbar-item {
+	font-family: 'Open Sans', sans-serif;
+	background-color: inherit;
+}
+
+.navSelect {
+	font-weight: 800;
+	color: #696969 !important;
+	background-color: inherit;
+}
+
+/* intro */
+/* remove inline styling for text from html and put here with good class tags */
+
+/* input fields */
+.column.has-vertically-aligned-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+

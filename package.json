@@ -18,8 +18,6 @@
   },
   "homepage": "https://github.com/jseanpatel/Maribel#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "express-generator": "^4.16.1",
     "pdfkit": "^0.10.0"
   }
 }
