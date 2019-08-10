@@ -25,6 +25,14 @@ body {
 	padding: 4rem;
 }
 
+.is-heavy-weight {
+	font-weight: 800  !important;
+}
+
+.has-tile-padding {
+	padding: 4.5rem !important;
+}
+
 .navSelect {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
