@@ -44,6 +44,18 @@ body {
 	background-color: inherit !important;
 }
 
+.navSelect:hover {
+	-moz-transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out;
+    transition: background-color .25s ease-in-out !important;
+	background-color: white !important;
+}
+
+.navSelect:current {
+	background-color: red !important;
+}
+
 /* intro */
 /* remove inline styling for text from html and put here with good class tags */
 

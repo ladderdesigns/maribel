@@ -14,101 +14,53 @@ window.onload = function () {
 // This is not a constructor.
 function generatePaper() {
 
-   // // Make the paper.
-   // var doc = new jsPDF({
-   //     orientation: 'portrait',
-   //     unit: 'in',
-   //     format: 'letter'
-   // })
+   var doc = new PDFDocument();
+   var stream = doc.pipe(blobStream());
 
-   // Create a document
-   // create a document and pipe to a blob
-var doc = new PDFDocument();
-var stream = doc.pipe(blobStream());
+   const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in suscipit purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus nec hendrerit felis. Morbi aliquam facilisis risus eu lacinia. Sed eu leo in turpis fringilla hendrerit. Ut nec accumsan nisl.";
 
-// draw some text
-doc.fontSize(25).text('Here is some vector graphics...', 100, 80);
+   doc.fontSize(8);
+   doc.text(`This text is left aligned. ${lorem}`, {
+    width: 410,
+    align: 'left'
+   }
+   );
+   doc.moveDown();
+   doc.text(`This text is centered. ${lorem}`, {
+    width: 410,
+    align: 'center'
+   }
+   );
+   doc.moveDown();
+   doc.text(`This text is right aligned. ${lorem}`, {
+    width: 410,
+    align: 'right'
+   }
+   );
+   doc.moveDown();
+   doc.text(`This text is justified. ${lorem}`, {
+    width: 410,
+    align: 'justify'
+   }
+   );
+   // draw bounding rectangle
+   doc.rect(doc.x, 0, 410, doc.y).stroke();
 
-// some vector graphics
-doc
-  .save()
-  .moveTo(100, 150)
-  .lineTo(100, 250)
-  .lineTo(200, 250)
-  .fill('#FF3300');
+   
 
-doc.circle(280, 200, 50).fill('#6600FF');
-
-// an SVG path
-doc
-  .scale(0.6)
-  .translate(470, 130)
-  .path('M 250,75 L 323,301 131,161 369,161 177,301 z')
-  .fill('red', 'even-odd')
-  .restore();
-
-// and some justified text wrapped into columns
-doc
-  .text('And here is some wrapped text...', 100, 300)
-  .font('Times-Roman', 13)
-  .moveDown()
-//   .text(lorem, {
-//     width: 412,
-//     align: 'justify',
-//     indent: 30,
-//     columns: 2,
-//     height: 300,
-//     ellipsis: true
-//   });
-
-// end and display the document in the iframe to the right
-doc.end();
-stream.on('finish', function() {
-   var iframe = document.querySelector('embed');
-   iframe.src = stream.toBlobURL('application/pdf');
-});
-   // // Set general paper guidelines.
-   // doc.setFont('times', 'normal')
-   // doc.setFontSize(12)
-   // doc.pageNumber = 0
-
-   // // Set all the information inside the doc object.
-   // var paperInfo = [studentName, className, profName, dueDate, paperTitle, paperBody];
-   // doc.paperInfo = paperInfo;
-
-   // // Set the page numbering.
-   // // placeOnPage = getPageNumbering('fullName', 9)
-
-
-   // doc.text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ', 1, 1)
-   // doc.save('two-by-four.pdf')
+   // end and display the document in the iframe to the right
+   doc.end();
+   stream.on('finish', function() {
+      var iframe = document.querySelector('embed');
+      // get a blob you can do whatever you like with
+      const blob = stream.toBlob('application/pdf');
+      // or get a blob URL for display in the browser
+      const url = stream.toBlobURL('application/pdf');
+      iframe.src = url;
+     });
 
 
 
-}
-
-// Makes lines of no more than 120 chars that can be pasted onto the document - simulating margins.
-function makeLines(paperBody) {
-   // var words = paperBody.split()
-   // var totalLines = []
-   // var y = 0
-   // for (var x = 0; x < words.length; x++) {
-   //     var runningWord = ''
-   //     if ((words[x].length + charCount) < 120) {
-   //         runningWord += words[x]
-   //         y + words[x].length
-   //     } else {
-   //         totalLines.push(runningWord)
-   //         charCount = 0
-   //     }
-   // }
-   // return totalLines
-}
-
-
-function getPageNumbering(fullName, pageNumber) {
-   lastName = fullName.split(" ")
-   return lastName[lastName.length - 1] + " " + pageNumber
 }
 
 
