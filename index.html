@@ -81,7 +81,7 @@
 					</div>
 					<div class="column is-half is-centered has-vertically-aligned-content">
 						<div class="buttons is-centered">
-							<button class="button is-large is-size-1 is-pulled-right has-background-info has-open-sans has-text-white has-heavy-weight"> Let's
+							<button class="button is-large is-size-2 is-pulled-right has-background-info has-open-sans has-text-white has-heavy-weight"> Let's
 								format! 
 								<i class="fas fa-arrow-circle-right fa-lg" style="padding-left: 1rem"></i>
 							</button>
@@ -144,7 +144,7 @@
 						<p class="level-item"><button class="button is-link" onclick="generatePaper()">Generate</button>
 						</p>
 						<p class="level-item"><button class="button is-link is-outlined"
-								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents'])">Clear
+								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents']); window.open('file.doc')">Clear
 								Fields</button></p>
 					</div>
 				</nav>
@@ -153,7 +153,7 @@
 	</section>
 	<section class="section" id="tool">
 		<div class="container">
-			<div class="ile notification is-child has-background-white-bis has-tile-padding">
+			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 
 				<embed class="embed" src="">
 
@@ -162,8 +162,8 @@
 				<nav class="level is-mobile">
 					<div class="level-left"></div>
 					<div class="level-right">
-						<p class="level-item"><button class="button is-link" onclick="generatePaper()">Generate</button>
-						</p>
+						<p class="level-item"><button class="button is-link" onclick="generatePaper()">Generate</button></p>
+						<p class="level-item"><button class="button is-link download" onclick="downloadFile(lastBlob, 'jacob.pdf');">Download</button></p>
 						<p class="level-item"><button class="button is-link is-outlined"
 								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents'])">Clear
 								Fields</button></p>
@@ -172,8 +172,6 @@
 			</div>
 		</div>
 	</section>
-
-
 	<footer class="footer" style="text-align: center">
 		<div class="content">
 			<div class="container">

@@ -1,4 +1,9 @@
+// author: Jacob Patel
 
+var lastBlob = {};
+
+// bulma modal
+// bulma toast
 
 // Set the paper info.
 
@@ -46,8 +51,6 @@ function generatePaper() {
    // draw bounding rectangle
    doc.rect(doc.x, 0, 410, doc.y).stroke();
 
-   
-
    // end and display the document in the iframe to the right
    doc.end();
    stream.on('finish', function() {
@@ -56,13 +59,24 @@ function generatePaper() {
       const blob = stream.toBlob('application/pdf');
       // or get a blob URL for display in the browser
       const url = stream.toBlobURL('application/pdf');
+      lastBlob = blob;
       iframe.src = url;
      });
 
-
-
 }
 
+const downloadFile = (blob, fileName) => {
+   const link = document.createElement('a');
+   // create a blobURI pointing to our Blob
+   link.href = URL.createObjectURL(blob);
+   link.download = fileName;
+   // some browser needs the anchor to be in the doc
+   document.body.append(link);
+   link.click();
+   link.remove();
+   // in case the Blob uses a lot of memory
+   window.addEventListener('focus', e=>URL.revokeObjectURL(link.href), {once:true});
+ };
 
 function clearFields(idArray) {
 
