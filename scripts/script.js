@@ -5,6 +5,8 @@ var lastBlob = {};
 // bulma modal
 // bulma toast
 
+// or bulma notification, has js on docs page
+
 // Set the paper info.
 
 window.onload = function () {
@@ -16,40 +18,13 @@ window.onload = function () {
    // var paperBody = document.getElementById('paperBody').value;
 }
 
+// avoid all this with map function
+
 // This is not a constructor.
 function generatePaper() {
 
    var doc = new PDFDocument();
    var stream = doc.pipe(blobStream());
-
-   const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam in suscipit purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus nec hendrerit felis. Morbi aliquam facilisis risus eu lacinia. Sed eu leo in turpis fringilla hendrerit. Ut nec accumsan nisl.";
-
-   doc.fontSize(8);
-   doc.text(`This text is left aligned. ${lorem}`, {
-    width: 410,
-    align: 'left'
-   }
-   );
-   doc.moveDown();
-   doc.text(`This text is centered. ${lorem}`, {
-    width: 410,
-    align: 'center'
-   }
-   );
-   doc.moveDown();
-   doc.text(`This text is right aligned. ${lorem}`, {
-    width: 410,
-    align: 'right'
-   }
-   );
-   doc.moveDown();
-   doc.text(`This text is justified. ${lorem}`, {
-    width: 410,
-    align: 'justify'
-   }
-   );
-   // draw bounding rectangle
-   doc.rect(doc.x, 0, 410, doc.y).stroke();
 
    // end and display the document in the iframe to the right
    doc.end();

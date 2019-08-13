@@ -75,6 +75,11 @@ div.current a {
 }
 
 .embed {
-	width: 100%;
-	height: 500px;
+	width: 100% !important;
+	height: 500px !important;
+}
+
+.is-pink {
+	background-color: #ff4486 !important;
+	color: white !important;
 }
