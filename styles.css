@@ -51,18 +51,12 @@ body {
    	transition: background-color .25s ease-in-out !important;
 	background-color: white !important;
 }
-div.current a {
-	color: red!
-}
 
 .is-nav-active {
 	background-color: #444 !important;
     color: #fff !important;
 }
 
-.navSelect:current {
-	background-color: red !important;
-}
 
 /* intro */
 /* remove inline styling for text from html and put here with good class tags */
@@ -79,7 +73,7 @@ div.current a {
 	height: 500px !important;
 }
 
-.is-pink {
-	background-color: #ff4486 !important;
+.is-blue-button {
+	background-color: #44c7ff !important;
 	color: white !important;
 }
