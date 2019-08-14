@@ -38,6 +38,7 @@ function generatePaper() {
       iframe.src = url;
      });
 
+     quarter()
 }
 
 const downloadFile = (blob, fileName) => {
@@ -59,3 +60,10 @@ function clearFields(idArray) {
       document.getElementById(id).value = "";
    });
 }
+
+function quarter() {
+   window.resizeTo(
+     window.screen.availWidth / 2,
+     window.screen.availHeight / 2
+   );
+ }
