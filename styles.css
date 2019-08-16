@@ -78,3 +78,8 @@ body {
 	background-color: #44c7ff !important;
 	color: white !important;
 }
+
+.inputTitle {
+	padding-right: 7px !important;
+	font-family: 'Open Sans', sans-serif;
+}
