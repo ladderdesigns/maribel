@@ -20,16 +20,43 @@ body {
 		font-size: 2.5rem !important;
 	}	
 }
-.navbar-item {
+
+.tile.notification.is-child.has-background-white-bis.has-maribelTiles {
+	padding: 4rem;
+}
+
+.has-heavy-weight {
+	font-weight: 800  !important;
+}
+
+.has-tile-padding {
+	padding: 3.5rem !important;
+}
+
+.has-open-sans {
 	font-family: 'Open Sans', sans-serif;
-	background-color: inherit;
 }
 
 .navSelect {
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 800;
 	color: #696969 !important;
-	background-color: inherit;
+	background-color: inherit !important;
 }
+
+.navSelect:hover:not(.is-nav-active) {
+	-moz-transition: background-color .25s ease-in-out;
+    -webkit-transition: background-color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out;
+   	transition: background-color .25s ease-in-out !important;
+	background-color: white !important;
+}
+
+.is-nav-active {
+	background-color: #444 !important;
+    color: #fff !important;
+}
+
 
 /* intro */
 /* remove inline styling for text from html and put here with good class tags */
@@ -41,3 +68,18 @@ body {
 	justify-content: center;
 }
 
+.embed {
+	width: 100% !important;
+	height: 500px !important;
+
+}
+
+.is-blue-button {
+	background-color: #44c7ff !important;
+	color: white !important;
+}
+
+.inputTitle {
+	padding-right: 7px !important;
+	font-family: 'Open Sans', sans-serif;
+}
