@@ -26,6 +26,17 @@ function generatePaper() {
    var doc = new PDFDocument();
    var stream = doc.pipe(blobStream());
 
+   // Set the page margins
+   doc.addPage({
+      margins: {
+      top: 36,
+      bottom: 72,
+      left: 72,
+      right: 72
+      }
+     });
+
+
    // end and display the document in the iframe to the right
    doc.end();
    stream.on('finish', function() {
