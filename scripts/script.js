@@ -10,31 +10,40 @@ var lastBlob = {};
 // Set the paper info.
 
 window.onload = function () {
-   // var studentName = document.getElementById('studentName').value;
-   // var className = document.getElementById('className').value;
-   // var profName = document.getElementById('profName').value;
-   // var dueDate = document.getElementById('dueDate').value;
-   // var paperTitle = document.getElementById('paperTitle').value;
-   // var paperBody = document.getElementById('paperBody').value;
+   var studentName = document.getElementById('studentName').value;
+   var className = document.getElementById('className').value;
+   var profName = document.getElementById('profName').value;
+   var dueDate = document.getElementById('dueDate').value;
+   var paperTitle = document.getElementById('paperTitle').value;
+   var paperBody = document.getElementById('paperBody').value;
 }
 
 // avoid all this with map function
-
+s
 // This is not a constructor.
 function generatePaper() {
 
-   var doc = new PDFDocument();
+   var doc = new PDFDocument({autoFirstPage: false});
    var stream = doc.pipe(blobStream());
+
+   // Set document font and size.
+   doc
+      .fontSize(12)
+      .font("Times-Roman")
+      .lineGap(24)
 
    // Set the page margins
    doc.addPage({
       margins: {
-      top: 36,
+      top: 72,
       bottom: 72,
       left: 72,
       right: 72
       }
      });
+
+     doc
+      .text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's")
 
 
    // end and display the document in the iframe to the right
