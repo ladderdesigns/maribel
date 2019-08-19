@@ -9,27 +9,25 @@ var lastBlob = {};
 
 // Set the paper info.
 
-window.onload = function () {
-   var studentName = document.getElementById('studentName').value;
-   var className = document.getElementById('className').value;
-   var profName = document.getElementById('profName').value;
-   var dueDate = document.getElementById('dueDate').value;
-   var paperTitle = document.getElementById('paperTitle').value;
-   var paperBody = document.getElementById('paperBody').value;
-}
-
 // avoid all this with map function
-s
+
 // This is not a constructor.
 function generatePaper() {
+
+   var studentName = document.getElementById('studentName').value;
+   var profName = document.getElementById('profName').value;
+   var className = document.getElementById('className').value;
+   var dueDate = document.getElementById('dueDate').value;
+   var paperTitle = document.getElementById('paperTitle').value;
+   var paperContents = document.getElementById('paperContents').value;
 
    var doc = new PDFDocument({autoFirstPage: false});
    var stream = doc.pipe(blobStream());
 
-   // Set document font and size.
+   // Set document MLA guidelines.
    doc
       .fontSize(12)
-      .font("Times-Roman")
+      .font('Times-Roman')
       .lineGap(24)
 
    // Set the page margins
@@ -42,12 +40,27 @@ function generatePaper() {
       }
      });
 
+     // Configure the heading in the top left corner.
      doc
-      .text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's")
+      .text(studentName, 72, 72)
+      .text(profName, 72, 108)
+      .text(className, 72, 144)
+      .text(dueDate, 72, 180 )
+   
 
 
-   // end and display the document in the iframe to the right
+     doc.text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+     doc.text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+     doc.text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+     doc.text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+
+     doc
+      .text(paperContents)
+
+
+   // End and display the document in the iframe to the right
    doc.end();
+
    stream.on('finish', function() {
       var iframe = document.querySelector('embed');
       // get a blob you can do whatever you like with
