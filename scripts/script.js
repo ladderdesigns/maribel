@@ -19,7 +19,7 @@ lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting indust
 
 function generatePaper() {
 
-   pageCounter = 0;
+   currentPage = 0;
 
    var studentName = document.getElementById('studentName').value;
    var profName = document.getElementById('profName').value;
@@ -35,12 +35,17 @@ function generatePaper() {
    doc
       .fontSize(12)
       .font('Times-Roman')
-      .lineGap(18)
+      .lineGap(24)
 
    doc.on('pageAdded', function () {
-      doc.text(studentName, 72, 72)
+      doc.moveUp()
       currentPage += 1;
+      doc.text(getLastName(studentName) + ' ' + currentPage, {
+         align: 'right'
+      }
+      );
    })
+   
 
    // Set the page margins
    doc.addPage({
@@ -53,15 +58,18 @@ function generatePaper() {
    });
 
    // Configure the heading in the top left corner.
-   doc
-      .text(studentName, 72, 72)
-      .text(profName, 72, 108)
-      .text(className, 72, 144)
-      .text(dueDate, 72, 180)
-      .text(paperTitle, {
-         align: 'center'
-      }
-      );
+   if (currentPage == 1) {
+      doc
+         .text(studentName, 72, 72)
+         .text(profName, 72, 108)
+         .text(className, 72, 144)
+         .text(dueDate, 72, 180)
+         .text(paperTitle, {
+            align: 'center'
+         }
+         );
+
+   }
 
 
 
@@ -86,6 +94,12 @@ function generatePaper() {
    });
 
    quarter()
+}
+
+function getLastName(words) {
+   var n = words.split(" ");
+   return n[n.length - 1];
+
 }
 
 const downloadFile = (blob, fileName) => {
