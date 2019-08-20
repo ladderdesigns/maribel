@@ -15,7 +15,7 @@
 	<script type="text/javascript" src="scripts/blob-stream.js"></script>
 </head>
 
-<body class="has-text-grey-dark">
+<body class="has-text-grey-dark" style="scroll-behavior: smooth;">
 	<section class="hero">
 		<div class="container">
 			<div class="tile notification is-child" style="background-color: inherit">
@@ -39,7 +39,7 @@
 						<div class="navbar-end">
 							<div class="navbar-item">
 								<div class="buttons">
-									<a class="button is-light navSelect is-nav-active" href="index.html"> Formatter </a>
+									<a class="button is-light navSelect is-nav-active" href="#scroll"> Formatter </a>
 								</div>
 							</div>
 							<div class="navbar-item">
@@ -66,27 +66,29 @@
 		</div>
 	</section>
 	<section class="section" id="intro">
-		<div class="container">
+		<div class="container" style="">
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
-				<div class="columns">
+				<div class="columns has-text-centered-mobile">
 					<div class="column is-half">
-						<div class="content is-size-1">
+						<div class="content is-size-1 is-size-4-mobile">
 							<h2 class="title titleText has-heavy-weight" style=" color: #444;">
-								Hi. This is <span style="color: #ff4486;"> Maribel</span>
+								Hi. This is <span style="color: #ff4486;"> Maribel.</span>
 
 							</h2>
-							<p class="subtitle has-text-weight-light is-2" style="color: #696969"> It's a free,
+							<p class="subtitle has-text-weight-light is-2 is-size-3-mobile" style="color: #696969"> It's a free,
 								all-in-one MLA formatter for your next paper. </p>
 						</div>
 					</div>
 					<div class="column is-half is-centered has-vertically-aligned-content">
 						<div class="buttons is-centered">
-							<button
-								class="button is-large is-size-2 is-pulled-right has-open-sans has-text-white has-heavy-weight"
-								style="background-color: #44c7ff"> Let's
-								format!
-								<i class="fas fa-arrow-circle-right fa-lg" style="padding-left: 1rem"></i>
-							</button>
+							<a href="#scroll">
+								<button
+									class="button is-large is-size-2 is-size-4-mobile is-pulled-right has-open-sans has-text-white has-heavy-weight slider"
+									style="background-color: #44c7ff;"> Let's
+									format!
+									<i class="fas fa-arrow-circle-right fa-lg" style="padding-left: 1rem"></i>
+								</button>
+							</a>
 
 						</div>
 					</div>
@@ -94,7 +96,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="section" id="tool">
+	<section class="section" id="scroll">
 		<div class="container">
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 				<div class="columns">
@@ -140,7 +142,7 @@
 						<div class="field">
 							<div class="control">
 								<div class="level">
-									<p class="level-left inputTitle"> Paper Title: </p>
+									<p class="level-left inputTitle"> Paper Title and Contents: </p>
 									<input class="input " id="paperTitle" type="text"
 										placeholder="Sancho Panza - The World's Best Squire">
 								</div>
@@ -189,6 +191,8 @@
 			</div>
 		</div>
 	</section>
+	<br>
+	<br>
 	<footer class="footer" style="text-align: center; background-color:">
 		<div class="content">
 			<div class="container">
