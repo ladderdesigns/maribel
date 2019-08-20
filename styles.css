@@ -44,7 +44,7 @@ body {
 	background-color: inherit !important;
 }
 
-.navSelect:hover:not(.is-nav-active) {
+a.navSelect:hover:not(.is-nav-active) {
 	-moz-transition: background-color .25s ease-in-out;
     -webkit-transition: background-color .25s ease-in-out;
     -ms-transition: background-color .25s ease-in-out;
