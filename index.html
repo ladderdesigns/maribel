@@ -84,7 +84,7 @@
 						<div class="buttons is-centered">
 							<a href="#scroll">
 								<button
-									class="button is-large is-size-2 is-size-4-mobile is-pulled-right has-open-sans has-text-white has-heavy-weight slider"
+									class="button is-large is-size-2 is-size-4-mobile is-pulled-right has-open-sans has-text-white has-heavy-weight slider zoom"
 									style="background-color: #44c7ff; font-display: optional"> Let's
 									format!
 									<i class="fas fa-arrow-circle-right fa-lg" style="padding-left: 1rem;"></i>
@@ -161,10 +161,10 @@
 				<nav class="level is-mobile">
 					<div class="level-left"></div>
 					<div class="level-right">
-						<p class="level-item"><button class="button is-blue-button"
+						<p class="level-item zoom has-5px-margins"><button class="button is-blue-button"
 								onclick="generatePaper()">Generate</button>
 						</p>
-						<p class="level-item"><button class="button is-blue-button"
+						<p class="level-item zoom"><button class="button is-blue-button has-20px-margins"
 								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents']);">Clear
 								Fields</button>
 						</p>
@@ -174,18 +174,18 @@
 		</div>
 	</section>
 	<section class="section" id="tool">
-		<div class="container">
+		<div class="container has-text">
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 
 				<embed class="embed" type="application/pdf">
 
 
 				</embed>
-				<nav class="level is-mobile">
+				<nav class="level is-mobile has-text">
 					<div class="level-left"></div>
 					<div class="level-right">
 
-						<p class="level-item"><button class="button is-blue-button download"
+						<p class="level-item has-20px-margins zoom"><button class="button is-blue-button download"
 								onclick="downloadFile(lastBlob, 'jacob.pdf');">Download</button></p>
 					</div>
 				</nav>
