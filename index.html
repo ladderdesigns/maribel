@@ -13,23 +13,30 @@
 	<script type="text/javascript" src="scripts/script.js"></script>
 	<script type="text/javascript" src="scripts/pdfkit.standalone.js"></script>
 	<script type="text/javascript" src="scripts/blob-stream.js"></script>
+
 </head>
 
 <body class="has-text-grey-dark" style="scroll-behavior: smooth;">
 	<section class="hero">
 		<div class="container">
 			<div class="tile notification is-child" style="background-color: inherit">
+
 				<nav class="navbar" role="navigation" aria-label="main navigation">
 					<div class="navbar-brand">
 						<div class="navbar-item">
 							<div class="buttons">
-								<a class="button is-danger is-size-4" id="titleLogo"><span> Maribel </span></a>
-								<span class="navSelect" id="titleName" style="margin-bottom: 0.5rem;"> by Jacob Patel
+								<a class="button is-danger is-size-4 zoom is-centered-mobile" id="titleLogo"
+									style="font-style: optional"><span> Maribel </span></a>
+								<span class="navSelect is-size-6-mobile" id="titleName"
+									style="margin-bottom: 0.5rem; padding-left: 1rem; margin-left: 8px"> by Jacob Patel
+
 								</span>
 							</div>
 						</div>
-						<a role="button" class="navbar-burger burger" style="margin-top: auto; margin-bottom: auto;"
-							aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+						<br>
+						<a role="button" class="navbar-burger burger is-pulled-right"
+							style="margin-top: auto; margin-bottom: auto;" aria-label="menu" aria-expanded="false"
+							data-target="navbarBasicExample">
 							<span aria-hidden="true"></span>
 							<span aria-hidden="true"></span>
 							<span aria-hidden="true"></span>
@@ -72,10 +79,11 @@
 					<div class="column is-half">
 						<div class="content is-size-1 is-size-4-mobile">
 							<h2 class="title titleText has-heavy-weight" style=" color: #444;">
-								Hi. This is <span style="color: #ff4486;"> Maribel.</span>
+								Hi. This is <span style="color: #ff4486; font-display: optional;"> Maribel.</span>
 
 							</h2>
-							<p class="subtitle has-text-weight-light is-2 is-size-3-mobile" style="color: #696969"> It's a free,
+							<p class="subtitle has-text-weight-light is-2 is-size-4-mobile" style="color: #696969"> It's
+								a free,
 								all-in-one MLA formatter for your next paper. </p>
 						</div>
 					</div>
@@ -83,10 +91,10 @@
 						<div class="buttons is-centered">
 							<a href="#scroll">
 								<button
-									class="button is-large is-size-2 is-size-4-mobile is-pulled-right has-open-sans has-text-white has-heavy-weight slider"
-									style="background-color: #44c7ff;"> Let's
+									class="button is-large is-size-2 is-size-4-mobile is-pulled-right has-open-sans has-text-white has-heavy-weight slider zoom"
+									style="background-color: #44c7ff; font-display: optional"> Let's
 									format!
-									<i class="fas fa-arrow-circle-right fa-lg" style="padding-left: 1rem"></i>
+									<i class="fas fa-arrow-circle-right fa-lg" style="padding-left: 1rem;"></i>
 								</button>
 							</a>
 
@@ -159,33 +167,42 @@
 				</div>
 				<nav class="level is-mobile">
 					<div class="level-left"></div>
-					<div class="level-right">
-						<p class="level-item"><button class="button is-blue-button"
-								onclick="generatePaper()">Generate</button>
-						</p>
-						<p class="level-item"><button class="button is-blue-button"
+					<div class="level-right ">
+						<p class="level-item zoom"><button class="button is-text"
 								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents']);">Clear
 								Fields</button>
 						</p>
+						<p class="level-item zoom "><button class="button is-blue-button"
+								onclick="generatePaper()">Generate <i class="fas fa-file-upload has-small-margin-left"></i> </button>
+						</p>
+
+
 					</div>
 				</nav>
 			</div>
 		</div>
 	</section>
 	<section class="section" id="tool">
-		<div class="container">
+		<div class="container has-text">
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 
 				<embed class="embed" type="application/pdf">
 
-
 				</embed>
-				<nav class="level is-mobile">
-					<div class="level-left"></div>
+				<nav class="level is-mobile has-text">
+					<div class="level-left">
+						<p class="level-item zoom"><button class="button is-blue-button " id="citations"
+								href="about.html"
+								onclick="location.href='https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html'"
+								;>Citations<i class="fas fa-book has-small-margin-left"></i> </button>
+						</p>
+					</div>
 					<div class="level-right">
 
-						<p class="level-item"><button class="button is-blue-button download"
-								onclick="downloadFile(lastBlob, 'jacob.pdf');">Download</button></p>
+						<p class="level-item zoom"><button class="button is-blue-button download" style="margin: 15px;"
+								onclick="downloadFile(lastBlob, 'jacob.pdf');">Download<i
+									class="fas fa-download has-small-margin-left"></i></button></p>
+
 					</div>
 				</nav>
 			</div>

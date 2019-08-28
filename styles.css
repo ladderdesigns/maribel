@@ -97,3 +97,28 @@ html {
 	scroll-behavior: smooth;
     speed: 50;
 }
+
+/* For zooming on titles and headings. */
+
+.zoom {
+	transition: transform .2s !important;
+	/* Animation */
+  }
+
+  .zoom:hover {
+	transform: scale(1.175) !important;
+	/* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+
+.has-15px-margins {
+	margin: 20px;
+}
+
+.has-small-margin-left {
+	margin-left: 7px;
+}
+
+#citations {
+	text-decoration: none !important;
+}
+
