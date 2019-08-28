@@ -113,3 +113,7 @@ html {
 .has-15px-margins {
 	margin: 20px;
 }
+
+#citations {
+	text-decoration: none !important;
+}
