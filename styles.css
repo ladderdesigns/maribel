@@ -103,7 +103,6 @@ html {
 .zoom {
 	transition: transform .2s !important;
 	/* Animation */
-	margin: 0 auto !important;
   }
 
   .zoom:hover {
@@ -112,5 +111,5 @@ html {
   }
 
 .has-15px-margins {
-	margin: 15px;
+	margin: 20px;
 }
