@@ -13,20 +13,23 @@
 	<script type="text/javascript" src="scripts/script.js"></script>
 	<script type="text/javascript" src="scripts/pdfkit.standalone.js"></script>
 	<script type="text/javascript" src="scripts/blob-stream.js"></script>
-	
+
 </head>
 
 <body class="has-text-grey-dark" style="scroll-behavior: smooth;">
 	<section class="hero">
 		<div class="container">
 			<div class="tile notification is-child" style="background-color: inherit">
-				
+
 				<nav class="navbar" role="navigation" aria-label="main navigation">
 					<div class="navbar-brand">
 						<div class="navbar-item">
 							<div class="buttons">
-								<a class="button is-danger is-size-4 zoom" id="titleLogo" style="font-style: optional"><span> Maribel </span></a>
-								<span class="navSelect" id="titleName" style="margin-bottom: 0.5rem; padding-left: 1rem; margin-left: 8px"> by Jacob Patel
+								<a class="button is-danger is-size-4 zoom" id="titleLogo"
+									style="font-style: optional"><span> Maribel </span></a>
+								<span class="navSelect" id="titleName"
+									style="margin-bottom: 0.5rem; padding-left: 1rem; margin-left: 8px"> by Jacob Patel
+									Iglesias
 								</span>
 							</div>
 						</div>
@@ -77,7 +80,8 @@
 								Hi. This is <span style="color: #ff4486; font-display: optional;"> Maribel.</span>
 
 							</h2>
-							<p class="subtitle has-text-weight-light is-2 is-size-3-mobile" style="color: #696969"> It's a free,
+							<p class="subtitle has-text-weight-light is-2 is-size-3-mobile" style="color: #696969"> It's
+								a free,
 								all-in-one MLA formatter for your next paper. </p>
 						</div>
 					</div>
@@ -162,13 +166,14 @@
 				<nav class="level is-mobile">
 					<div class="level-left"></div>
 					<div class="level-right">
-						<p class="level-item zoom has-5px-margins"><button class="button is-blue-button"
-								onclick="generatePaper()">Generate</button>
-						</p>
-						<p class="level-item zoom"><button class="button is-blue-button has-20px-margins"
+						<p class="level-item zoom"><button class="button is-blue-button has-15px-margins"
 								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents']);">Clear
 								Fields</button>
 						</p>
+						<p class="level-item zoom has-15px-margins"><button class="button is-blue-button"
+								onclick="generatePaper()">Generate</button>
+						</p>
+
 					</div>
 				</nav>
 			</div>
@@ -183,12 +188,18 @@
 
 				</embed>
 				<nav class="level is-mobile has-text">
-					<div class="level-left"></div>
+					<div class="level-left">
+						<a class="level-item has-15px-margins zoom"><button
+								class="button is-blue-button has-15px-margins download"
+								onclick="downloadFile(lastBlob, 'jacob.pdf');">Citations</button></a>
+					</div>
 					<div class="level-right">
 
-						<p class="level-item has-20px-margins zoom"><button class="button is-blue-button download"
+						<p class="level-item zoom"><button class="button is-blue-button download" style="margin: 15px;"
 								onclick="downloadFile(lastBlob, 'jacob.pdf');">Download</button></p>
+
 					</div>
+
 				</nav>
 			</div>
 		</div>
