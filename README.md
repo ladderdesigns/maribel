@@ -2,7 +2,7 @@
 
 *A free, all-in-one MLA formatter for your next paper.*
 
-!(Maribel/Images/GithubLogo.png)
+<img src="Maribel/Images/GithubLogo.png" alt="MaribelLogo" width="150"/>
 
 ## Table of Contents
 - [Description](#description)
