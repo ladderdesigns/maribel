@@ -114,6 +114,10 @@ html {
 	margin: 20px;
 }
 
+.has-small-margin-left {
+	margin-left: 7px;
+}
+
 #citations {
 	text-decoration: none !important;
 }
