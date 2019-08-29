@@ -13,7 +13,7 @@
 
 ## Description
 
-Maribel is a website I built for my mother, to help ease her pains of writing in MLA format, as she studied to accquire her Masters degree.
+Maribel is a website I built for my mother, to help ease her pains of writing in MLA format, as she studies to acquire her Master's degree.
 
 ## Technologies
 
@@ -28,7 +28,7 @@ Thank you Mom for continuously cheering on my learning. You are my biggest fan, 
 
 ## Deployment
 
-This website can be reached at [Maribel.io](maribel.io).
+This website can be reached at [maribel.io](maribel.io).
 
 ## License
 
