@@ -120,6 +120,11 @@ html {
 	margin-left: 6px;
 }
 
+.has-small-margin-top {
+	margin-top: 3rem !important;
+	margin-bottom: 10px !important;
+}
+
 #citations {
 	text-decoration: none !important;
 }
