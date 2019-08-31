@@ -1,4 +1,6 @@
 /* page styling */
+
+
 body {
 	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url(images/bg01.png);
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url(images/bg01.png);
