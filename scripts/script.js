@@ -87,12 +87,23 @@ function generatePaper() {
    documentTitle = paperTitle
 
    // Add the Work Cited page.
+
+   citations = document.getElementById('citations').value,
+   indivCitations = citations.split(".       ")
+
    doc
       .addPage()
       .text('Works Cited', {
          align: 'center'
       }
+      )
+      .text("", 84, 108)
+      .text(citations, {
+         align: 'left'
+      }
       );
+   
+      
 
 
    // End and display the document in the iframe to the right
@@ -190,3 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
    elem.parentNode.removeChild(elem);
    return false;
 }
+
+// Show and hide divs.
+function showhide(id) {
+   if (document.getElementById) {
+     var divid = document.getElementById(id);
+     var divs = document.getElementsByClassName("hideable");
+     for (var i = 0; i < divs.length; i = i + 1) {
+       $(divs[i]).fadeOut("slow");
+     }
+     $(divid).fadeIn("slow");
+   }
+   return false;
+ }
