@@ -84,6 +84,15 @@ function generatePaper() {
    // Set the name to be saved of the document.
    documentTitle = paperTitle
 
+   // Add the Work Cited page.
+   doc
+      .addPage()
+      .text('Work Cited', {
+         align: 'center'
+      }
+      );
+
+
    // End and display the document in the iframe to the right
    doc.end();
 
@@ -106,8 +115,8 @@ function getDocumentTitle() {
 
 function getLastName(words) {
    var n = words.split(" ");
-   return n[n.length - 1];
-
+   n.shift()
+   return n
 }
 
 const downloadFile = (blob, fileName) => {
@@ -163,3 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
  });
 
+ $(document).on('click', '.notification > button.delete', function() {
+   $(this).parent().addClass('is-hidden');
+   return false;
+});
