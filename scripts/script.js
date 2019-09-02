@@ -172,7 +172,17 @@ document.addEventListener('DOMContentLoaded', () => {
  
  });
 
- $(document).on('click', '.notification > button.delete', function() {
-   $(this).parent().addClass('is-hidden');
+ $(".delete").click(function() {
+   $(".modal").addClass("is-active");  
+ });
+ 
+ $(".modal-close").click(function() {
+    $(".modal").removeClass("is-active");
+ });
+
+ // Remove the article box.
+ function removeMessage() {
+   var elem = document.getElementById('message');
+   elem.parentNode.removeChild(elem);
    return false;
-});
+}

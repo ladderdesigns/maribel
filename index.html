@@ -27,7 +27,8 @@
 							<div class="buttons">
 								<a class="button is-danger is-size-4 zoom is-centered-mobile" id="titleLogo"
 									style=""><span> Maribel </span></a>
-								<span class="navSelect is-size-6-mobile" id="titleName" style="margin-bottom: 0.5rem; margin-left: 14px">
+								<span class="navSelect is-size-6-mobile" id="titleName"
+									style="margin-bottom: 0.5rem; margin-left: 14px">
 									by Jacob Patel
 
 								</span>
@@ -46,24 +47,27 @@
 						<div class="navbar-end">
 							<div class="navbar-item">
 								<div class="buttons">
-									<a class="button is-light navSelect is-nav-active" onclick="location.href='#scroll'"> Formatter </a>
+									<a class="button is-light navSelect is-nav-active"
+										onclick="location.href='#scroll'"> Formatter </a>
 								</div>
 							</div>
 							<div class="navbar-item">
 								<div class="buttons">
-									<a  class="button is-light navSelect"
-									onclick="location.href='https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html'">
+									<a class="button is-light navSelect"
+										onclick="location.href='https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_general_format.html'">
 										MLA Guidelines </a>
 								</div>
 							</div>
 							<div class="navbar-item">
 								<div class="buttons">
-									<a class="button is-light navSelect" onclick="location.href='/about.html'"> About </a>
+									<a class="button is-light navSelect" onclick="location.href='/about.html'"> About
+									</a>
 								</div>
 							</div>
 							<div class="navbar-item">
 								<div class="buttons">
-									<a class="button is-light navSelect" onclick="location.href='https://ko-fi.com/jseanpatel'"> Support </a>
+									<a class="button is-light navSelect"
+										onclick="location.href='https://ko-fi.com/jseanpatel'"> Support </a>
 								</div>
 							</div>
 						</div>
@@ -183,18 +187,23 @@
 			</div>
 		</div>
 	</section>
-	<article class="message tile has-background-white-bis" style="margin-left: 4rem; margin-right: 4rem;color: #444;display: block">
-			<div class="message-header has-text-centered">
-			  <p> Directions for Adding Citations</p>
-			  <button class="delete" aria-label="delete"></button>
-			</div>
-			<div class="message-body">
-			  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
-			</div>
-		  </article>
+
 	<section class="section" id="tool">
 		<div class="container has-text">
+
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
+				<article class="message tile" style="display: block" id="message">
+					<div class="message-header has-text-centered">
+						<p> Directions for Adding Citations to Your Paper</p>
+						<button class="delete" aria-label="delete" onclick=removeMessage()></button>
+					</div>
+					<div class="message-body">
+
+						Click <a onclick="location.href='https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html'"> here</a> to access a citation generator. After you have generated your citations simply click "add citations"
+						at the bottom of this page, and paste in your completed citations skipping a line after each subsequent entry.
+
+					</div>
+				</article>
 
 				<embed class="embed" type="application/pdf">
 
@@ -206,7 +215,7 @@
 								onclick="location.href='https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html'"
 								;>Add Citations<i class="fas fa-book has-small-margin-left"></i> </button>
 						</p>
-					
+
 					</div>
 					<div class="level-right">
 
