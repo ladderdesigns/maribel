@@ -19,6 +19,8 @@ var documentTitle;
 
 lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
+
+// Main tool for generating the paper.
 function generatePaper() {
 
    currentPage = 0;
@@ -87,7 +89,7 @@ function generatePaper() {
    // Add the Work Cited page.
    doc
       .addPage()
-      .text('Work Cited', {
+      .text('Works Cited', {
          align: 'center'
       }
       );
@@ -132,6 +134,7 @@ const downloadFile = (blob, fileName) => {
    window.addEventListener('focus', e => URL.revokeObjectURL(link.href), { once: true });
 };
 
+// Clear all user inputted fields.
 function clearFields(idArray) {
 
    idArray.forEach(id => {
@@ -146,6 +149,7 @@ function quarter() {
    );
 }
 
+// Event listener for the hamburger.
 document.addEventListener('DOMContentLoaded', () => {
 
    // Get all "navbar-burger" elements
