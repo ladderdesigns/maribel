@@ -2,14 +2,6 @@
 
 var lastBlob = {};
 
-// bulma modal
-// bulma toast
-
-// or bulma notification, has js on docs page
-
-// Set the paper info.
-
-// avoid all this with map function
 
 // This is not a constructor.
 
@@ -102,9 +94,6 @@ function generatePaper() {
          align: 'left'
       }
       );
-   
-      
-
 
    // End and display the document in the iframe to the right
    doc.end();
