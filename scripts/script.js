@@ -81,19 +81,26 @@ function generatePaper() {
    // Add the Work Cited page.
 
    citations = document.getElementById('citations').value,
-   indivCitations = citations.split(".       ")
 
+   alert(citations)
+   alert(indivCitations[0])
    doc
       .addPage()
       .text('Works Cited', {
          align: 'center'
       }
       )
-      .text("", 84, 108)
-      .text(citations, {
-         align: 'left'
-      }
-      );
+   
+
+   var x;
+   // for (x = 0; indivCitations.length; x++) {
+   //    doc.text(indivCitations[x], {
+   //       align: 'left'
+   //    }
+   //    );
+   //    x++;
+   // }
+      
 
    // End and display the document in the iframe to the right
    doc.end();
@@ -202,4 +209,14 @@ function showhide(id) {
      $(divid).fadeIn("slow");
    }
    return false;
+ }
+
+ function toggleWorkCited() {
+   var x = document.getElementById("workCited");
+   if (x.style.display === "none") {
+     document.getElementById("toggleWorkCited").textContent = 'Add Citations'
+   } else {
+      document.getElementById("toggleWorkCited").textContent = 'Add Citations'
+     x.style.display = "block";
+   }
  }

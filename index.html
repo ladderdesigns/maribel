@@ -202,9 +202,9 @@
 						Click <a
 							onclick="location.href='https://owl.purdue.edu/owl/research_and_citation/mla_style/mla_formatting_and_style_guide/mla_formatting_and_style_guide.html'">
 							here</a> to access a citation generator. After you have created your citations simply click
-						"Add Citations"
+						"Add Work Cited"
 						at the bottom of this page, and paste in your completed citations - skipping a line after each
-						subsequent entry.
+						subsequent entry. Then, click "Add Citations" to finish.
 
 					</div>
 				</article>
@@ -214,10 +214,10 @@
 				</embed>
 				<nav class="level is-mobile has-text">
 					<div class="level-left">
-						<p class="level-item zoom"><button class="button is-blue-button " id="addWorkCited"
+						<p class="level-item zoom"><button class="button is-blue-button" id="toggleWorkCited"
 								href="about.html"
-								onclick=addWorkCited()
-								;>Add Citations<i class="fas fa-book has-small-margin-left"></i> </button>
+								onclick="toggleWorkCited()"
+								;>Create Work Cited<i class="fas fa-book has-small-margin-left"></i> </button>
 						</p>
 					</div>
 					<div class="level-right">
@@ -229,8 +229,8 @@
 					</div>
 
 				</nav>
-				<textarea class="textarea" id="citations" type="text"
-					placeholder="Cervantes Saavedra, Miguel de, 1547-1616. The Adventures of Don Quixote De La Mancha. New York :Farrar, Straus, Giroux, 1986."
+				<textarea class="textarea" type="text" id="workCited" display="hidden"
+					placeholder="Cervantes Saavedra, Miguel de, 1547-1616. The Adventures of Don Quixote De La Mancha. New York :Farrar, Straus, Giroux, 1986" 
 					rows=3></textarea>
 			</div>
 
