@@ -9,7 +9,7 @@ var currentPage;
 
 var documentTitle;
 
-var makeWorkCited = false;
+var makeWorksCited = false;
 
 var documentTitle;
 
@@ -88,10 +88,10 @@ function generatePaper() {
    // Set the name to be saved of the document.
    documentTitle = paperTitle
 
-   // Add the Work Cited page.
+   // Add the Works Cited page.
 
-   if (makeWorkCited) {
-      citations = document.getElementById('workCited').value,
+   if (makeWorksCited) {
+      citations = document.getElementById('worksCited').value,
 
          doc
             .addPage()
@@ -128,8 +128,8 @@ function generatePaper() {
    });
 }
 
-function isWorkCitedEnabled() {
-   return makeWorkCited;
+function isWorksCitedEnabled() {
+   return makeWorksCited;
 }
 
 function getDocumentTitle() {
@@ -211,15 +211,13 @@ function removeItem(id) {
    elem.parentNode.removeChild(elem);
 }
 
-function toggleWorkCited() {
-   var x = document.getElementById("workCited");
+function toggleWorksCited() {
+   var x = document.getElementById("worksCited");
    if (x.style.display === "none") {
-      document.getElementById("toggleWorkCited").textContent = 'Update Citations'
-      
-   } else {
-      document.getElementById("toggleWorkCited").textContent = 'Update Citations'
       x.style.display = "block";
-      makeWorkCited = true;
-      generatePaper()
+      makeWorksCited = true;
+   } else {
+      x.style.display = "none";
+     
    }
 }

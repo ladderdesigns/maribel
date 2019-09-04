@@ -129,7 +129,7 @@ html {
 	text-decoration: none !important;
 }
 
-#workCited {
+#worksCited {
 	display: none;
 }
 
@@ -140,11 +140,11 @@ html {
 .fadeOut {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s 10s, opacity 0.5s linear;
+  transition: visibility 0s 10s, opacity 0.4s linear;
 }
 
 .fadeIn {
-  visibility: hidden;
+	visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 2s ease-in;
   -moz-transition: opacity 2s ease-in;
