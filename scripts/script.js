@@ -214,10 +214,11 @@ function removeItem(id) {
 function toggleWorksCited() {
    var x = document.getElementById("worksCited");
    if (x.style.display === "none") {
+      document.getElementById("toggleWorksCited").textContent = 'Remove Works Cited'
       x.style.display = "block";
       makeWorksCited = true;
    } else {
       x.style.display = "none";
-     
+      document.getElementById("toggleWorksCited").textContent = 'Add Works Cited'
    }
 }
