@@ -218,7 +218,7 @@ function toggleWorkCited() {
       
    } else {
       document.getElementById("toggleWorkCited").textContent = 'Update Citations'
-      fadeIn('message')
+      x.style.display = "block";
       makeWorkCited = true;
    }
 }
