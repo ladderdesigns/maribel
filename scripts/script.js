@@ -9,7 +9,9 @@ var currentPage;
 
 var documentTitle;
 
-var makeWorkCited;
+var makeWorkCited = false;
+
+var documentTitle;
 
 
 lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
@@ -74,8 +76,13 @@ function generatePaper() {
       .text(paperContents)
 
    // edit the document's metadata
-   doc
+   if (paperTitle != "") {
+      doc
       .info['Title'] = paperTitle
+   } else {
+      doc
+      .info['Title'] = 'Maribel - MLA Formatter'
+   }
 
 
    // Set the name to be saved of the document.
@@ -119,20 +126,22 @@ function generatePaper() {
       lastBlob = blob;
       iframe.src = url;
    });
-
-   quarter()
 }
 
-function toggleMakeWorkCited() {
-   makeWorkCited = true;
+function isWorkCitedEnabled() {
+   return makeWorkCited;
 }
 
 function getDocumentTitle() {
-   return documentTitle
+   if (documentTitle == "") {
+      return "Maribel - MLA Formatter"
+   } else {
+      return documentTitle;
+   }
 }
 
 function getLastName(words) {
-   var n = words.split(" ");
+   var n = words.split(" ")
    n.shift()
    return n
 }
@@ -156,13 +165,6 @@ function clearFields(idArray) {
    idArray.forEach(id => {
       document.getElementById(id).value = "";
    });
-}
-
-function quarter() {
-   window.resizeTo(
-      window.screen.availWidth / 2,
-      window.screen.availHeight / 2
-   );
 }
 
 // Event listener for the hamburger.
@@ -192,40 +194,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-$(".delete").click(function () {
-   $(".modal").addClass("is-active");
-});
-
-$(".modal-close").click(function () {
-   $(".modal").removeClass("is-active");
-});
-
-// Remove the article box.
-function removeMessage() {
-   var elem = document.getElementById('message');
-   elem.parentNode.removeChild(elem);
+function fadeOut(id) {
+   var elem = document.getElementById(id);
+   elem.className = "fadeOut"
    return false;
 }
 
-// Show and hide divs.
-function showhide(id) {
-   if (document.getElementById) {
-      var divid = document.getElementById(id);
-      var divs = document.getElementsByClassName("hideable");
-      for (var i = 0; i < divs.length; i = i + 1) {
-         $(divs[i]).fadeOut("slow");
-      }
-      $(divid).fadeIn("slow");
-   }
+function fadeIn(id) {
+   var elem = document.getElementById(id);
+   elem.className = "fadeIn"
    return false;
+}
+
+function removeItem(id) {
+   var elem = document.getElementById(id);
+   elem.parentNode.removeChild(elem);
 }
 
 function toggleWorkCited() {
    var x = document.getElementById("workCited");
    if (x.style.display === "none") {
-      document.getElementById("toggleWorkCited").textContent = 'Add Citations'
+      document.getElementById("toggleWorkCited").textContent = 'Update Citations'
+      
    } else {
-      document.getElementById("toggleWorkCited").textContent = 'Add Citations'
-      x.style.display = "block";
+      document.getElementById("toggleWorkCited").textContent = 'Update Citations'
+      fadeIn('message')
+      makeWorkCited = true;
    }
 }

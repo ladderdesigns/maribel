@@ -76,7 +76,7 @@ a.navSelect:hover:not(.is-nav-active) {
 
 }
 
-.is-blue-button {
+.is-blue {
 	background-color: #44c7ff !important;
 	color: white !important;
 }
@@ -133,3 +133,22 @@ html {
 	display: none;
 }
 
+.is-pink {
+	color: #ff4486
+}
+
+.fadeOut {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 10s, opacity 0.5s linear;
+}
+
+.fadeIn {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+}
