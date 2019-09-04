@@ -216,7 +216,7 @@
 					<div class="level-left">
 						<p class="level-item zoom"><button class="button is-blue-button" id="toggleWorkCited"
 								href="about.html"
-								onclick="toggleWorkCited()"
+								onclick="toggleWorkCited(); toggleMakeWorkCited(); generatePaper()"
 								;>Create Work Cited<i class="fas fa-book has-small-margin-left"></i> </button>
 						</p>
 					</div>
@@ -229,7 +229,7 @@
 					</div>
 
 				</nav>
-				<textarea class="textarea" type="text" id="workCited" display="hidden"
+				<textarea class="textarea" type="text" id="workCited"
 					placeholder="Cervantes Saavedra, Miguel de, 1547-1616. The Adventures of Don Quixote De La Mancha. New York :Farrar, Straus, Giroux, 1986" 
 					rows=3></textarea>
 			</div>

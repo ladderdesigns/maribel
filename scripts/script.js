@@ -9,6 +9,9 @@ var currentPage;
 
 var documentTitle;
 
+var makeWorkCited;
+
+
 lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
 
@@ -24,7 +27,7 @@ function generatePaper() {
    var paperTitle = document.getElementById('paperTitle').value;
    var paperContents = document.getElementById('paperContents').value;
 
-   var doc = new PDFDocument({ autoFirstPage: false});
+   var doc = new PDFDocument({ autoFirstPage: false });
    var stream = doc.pipe(blobStream());
 
    // Set document MLA guidelines.
@@ -41,7 +44,7 @@ function generatePaper() {
       }
       );
    })
-   
+
 
    // Set the page margins
    doc.addPage({
@@ -80,17 +83,19 @@ function generatePaper() {
 
    // Add the Work Cited page.
 
-   citations = document.getElementById('citations').value,
+   if (makeWorkCited) {
+      citations = document.getElementById('workCited').value,
 
-   alert(citations)
-   alert(indivCitations[0])
-   doc
-      .addPage()
-      .text('Works Cited', {
-         align: 'center'
-      }
-      )
-   
+         doc
+            .addPage()
+            .text('Works Cited', {
+               align: 'center'
+            }
+            )
+   }
+
+
+
 
    var x;
    // for (x = 0; indivCitations.length; x++) {
@@ -100,7 +105,7 @@ function generatePaper() {
    //    );
    //    x++;
    // }
-      
+
 
    // End and display the document in the iframe to the right
    doc.end();
@@ -116,6 +121,10 @@ function generatePaper() {
    });
 
    quarter()
+}
+
+function toggleMakeWorkCited() {
+   makeWorkCited = true;
 }
 
 function getDocumentTitle() {
@@ -161,38 +170,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
    // Get all "navbar-burger" elements
    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
- 
+
    // Check if there are any navbar burgers
    if ($navbarBurgers.length > 0) {
- 
-     // Add a click event on each of them
-     $navbarBurgers.forEach( el => {
-       el.addEventListener('click', () => {
- 
-         // Get the target from the "data-target" attribute
-         const target = el.dataset.target;
-         const $target = document.getElementById(target);
- 
-         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-         el.classList.toggle('is-active');
-         $target.classList.toggle('is-active');
- 
-       });
-     });
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+         el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+         });
+      });
    }
- 
- });
 
- $(".delete").click(function() {
-   $(".modal").addClass("is-active");  
- });
- 
- $(".modal-close").click(function() {
-    $(".modal").removeClass("is-active");
- });
+});
 
- // Remove the article box.
- function removeMessage() {
+$(".delete").click(function () {
+   $(".modal").addClass("is-active");
+});
+
+$(".modal-close").click(function () {
+   $(".modal").removeClass("is-active");
+});
+
+// Remove the article box.
+function removeMessage() {
    var elem = document.getElementById('message');
    elem.parentNode.removeChild(elem);
    return false;
@@ -201,22 +210,22 @@ document.addEventListener('DOMContentLoaded', () => {
 // Show and hide divs.
 function showhide(id) {
    if (document.getElementById) {
-     var divid = document.getElementById(id);
-     var divs = document.getElementsByClassName("hideable");
-     for (var i = 0; i < divs.length; i = i + 1) {
-       $(divs[i]).fadeOut("slow");
-     }
-     $(divid).fadeIn("slow");
+      var divid = document.getElementById(id);
+      var divs = document.getElementsByClassName("hideable");
+      for (var i = 0; i < divs.length; i = i + 1) {
+         $(divs[i]).fadeOut("slow");
+      }
+      $(divid).fadeIn("slow");
    }
    return false;
- }
+}
 
- function toggleWorkCited() {
+function toggleWorkCited() {
    var x = document.getElementById("workCited");
    if (x.style.display === "none") {
-     document.getElementById("toggleWorkCited").textContent = 'Add Citations'
+      document.getElementById("toggleWorkCited").textContent = 'Add Citations'
    } else {
       document.getElementById("toggleWorkCited").textContent = 'Add Citations'
-     x.style.display = "block";
+      x.style.display = "block";
    }
- }
+}
