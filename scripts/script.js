@@ -2,21 +2,20 @@
 
 var lastBlob = {};
 
-// bulma modal
-// bulma toast
-
-// or bulma notification, has js on docs page
-
-// Set the paper info.
-
-// avoid all this with map function
 
 // This is not a constructor.
 
 var currentPage;
 
+var documentTitle;
+
+var makeWorkCited;
+
+
 lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
 
+
+// Main tool for generating the paper.
 function generatePaper() {
 
    currentPage = 0;
@@ -28,7 +27,7 @@ function generatePaper() {
    var paperTitle = document.getElementById('paperTitle').value;
    var paperContents = document.getElementById('paperContents').value;
 
-   var doc = new PDFDocument({ autoFirstPage: false});
+   var doc = new PDFDocument({ autoFirstPage: false });
    var stream = doc.pipe(blobStream());
 
    // Set document MLA guidelines.
@@ -45,7 +44,7 @@ function generatePaper() {
       }
       );
    })
-   
+
 
    // Set the page margins
    doc.addPage({
@@ -79,6 +78,35 @@ function generatePaper() {
       .info['Title'] = paperTitle
 
 
+   // Set the name to be saved of the document.
+   documentTitle = paperTitle
+
+   // Add the Work Cited page.
+
+   if (makeWorkCited) {
+      citations = document.getElementById('workCited').value,
+
+         doc
+            .addPage()
+            .text('Works Cited', {
+               align: 'center'
+            }
+            )
+   }
+
+
+
+
+   var x;
+   // for (x = 0; indivCitations.length; x++) {
+   //    doc.text(indivCitations[x], {
+   //       align: 'left'
+   //    }
+   //    );
+   //    x++;
+   // }
+
+
    // End and display the document in the iframe to the right
    doc.end();
 
@@ -95,10 +123,18 @@ function generatePaper() {
    quarter()
 }
 
+function toggleMakeWorkCited() {
+   makeWorkCited = true;
+}
+
+function getDocumentTitle() {
+   return documentTitle
+}
+
 function getLastName(words) {
    var n = words.split(" ");
-   return n[n.length - 1];
-
+   n.shift()
+   return n
 }
 
 const downloadFile = (blob, fileName) => {
@@ -114,6 +150,7 @@ const downloadFile = (blob, fileName) => {
    window.addEventListener('focus', e => URL.revokeObjectURL(link.href), { once: true });
 };
 
+// Clear all user inputted fields.
 function clearFields(idArray) {
 
    idArray.forEach(id => {
@@ -128,29 +165,67 @@ function quarter() {
    );
 }
 
+// Event listener for the hamburger.
 document.addEventListener('DOMContentLoaded', () => {
 
    // Get all "navbar-burger" elements
    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
- 
+
    // Check if there are any navbar burgers
    if ($navbarBurgers.length > 0) {
- 
-     // Add a click event on each of them
-     $navbarBurgers.forEach( el => {
-       el.addEventListener('click', () => {
- 
-         // Get the target from the "data-target" attribute
-         const target = el.dataset.target;
-         const $target = document.getElementById(target);
- 
-         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-         el.classList.toggle('is-active');
-         $target.classList.toggle('is-active');
- 
-       });
-     });
-   }
- 
- });
 
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+         el.addEventListener('click', () => {
+
+            // Get the target from the "data-target" attribute
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+
+            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+         });
+      });
+   }
+
+});
+
+$(".delete").click(function () {
+   $(".modal").addClass("is-active");
+});
+
+$(".modal-close").click(function () {
+   $(".modal").removeClass("is-active");
+});
+
+// Remove the article box.
+function removeMessage() {
+   var elem = document.getElementById('message');
+   elem.parentNode.removeChild(elem);
+   return false;
+}
+
+// Show and hide divs.
+function showhide(id) {
+   if (document.getElementById) {
+      var divid = document.getElementById(id);
+      var divs = document.getElementsByClassName("hideable");
+      for (var i = 0; i < divs.length; i = i + 1) {
+         $(divs[i]).fadeOut("slow");
+      }
+      $(divid).fadeIn("slow");
+   }
+   return false;
+}
+
+function toggleWorkCited() {
+   var x = document.getElementById("workCited");
+   if (x.style.display === "none") {
+      document.getElementById("toggleWorkCited").textContent = 'Add Citations'
+   } else {
+      document.getElementById("toggleWorkCited").textContent = 'Add Citations'
+      x.style.display = "block";
+   }
+}

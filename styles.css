@@ -1,4 +1,6 @@
 /* page styling */
+
+
 body {
 	background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url(images/bg01.png);
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url(images/bg01.png);
@@ -118,7 +120,16 @@ html {
 	margin-left: 6px;
 }
 
+.has-small-margin-top {
+	margin-top: 2rem !important;
+	margin-bottom: 10px !important;
+}
+
 #citations {
 	text-decoration: none !important;
+}
+
+#workCited {
+	display: none;
 }
 
