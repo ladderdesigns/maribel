@@ -220,5 +220,6 @@ function toggleWorkCited() {
       document.getElementById("toggleWorkCited").textContent = 'Update Citations'
       x.style.display = "block";
       makeWorkCited = true;
+      generatePaper()
    }
 }
