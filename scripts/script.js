@@ -9,13 +9,9 @@ var currentPage;
 
 var documentTitle;
 
-var makeWorkCited = false;
+var makeWorksCited = false;
 
 var documentTitle;
-
-
-lorem = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry" + "s standard dummy" + "text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-
 
 // Main tool for generating the paper.
 function generatePaper() {
@@ -88,10 +84,10 @@ function generatePaper() {
    // Set the name to be saved of the document.
    documentTitle = paperTitle
 
-   // Add the Work Cited page.
+   // Add the Works Cited page.
 
-   if (makeWorkCited) {
-      citations = document.getElementById('workCited').value,
+   if (makeWorksCited) {
+      citations = document.getElementById('worksCited').value,
 
          doc
             .addPage()
@@ -128,10 +124,6 @@ function generatePaper() {
    });
 }
 
-function isWorkCitedEnabled() {
-   return makeWorkCited;
-}
-
 function getDocumentTitle() {
    if (documentTitle == "") {
       return "Maribel - MLA Formatter"
@@ -140,10 +132,9 @@ function getDocumentTitle() {
    }
 }
 
-function getLastName(words) {
-   var n = words.split(" ")
-   n.shift()
-   return n
+function getLastName(fullName) {
+   lastName = fullName.substring(fullName.indexOf(' ')+1)
+   return lastName
 }
 
 const downloadFile = (blob, fileName) => {
@@ -211,15 +202,14 @@ function removeItem(id) {
    elem.parentNode.removeChild(elem);
 }
 
-function toggleWorkCited() {
-   var x = document.getElementById("workCited");
+function toggleWorksCited() {
+   var x = document.getElementById("worksCited");
    if (x.style.display === "none") {
-      document.getElementById("toggleWorkCited").textContent = 'Update Citations'
-      
-   } else {
-      document.getElementById("toggleWorkCited").textContent = 'Update Citations'
+      document.getElementById("toggleWorksCited").textContent = 'Remove Works Cited'
       x.style.display = "block";
-      makeWorkCited = true;
-      generatePaper()
+      makeWorksCited = true;
+   } else {
+      x.style.display = "none";
+      document.getElementById("toggleWorksCited").textContent = 'Add Works Cited'
    }
 }

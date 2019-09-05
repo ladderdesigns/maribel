@@ -112,18 +112,18 @@
 		<div class="container">
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 				<article class="message tile" style="display: block;" id="message">
-					<div class="message-header has-text-centered is-blue">
+					<div class="message-header is-blue has-text-centered-mobile">
 						<p> Directions for Adding Citations</p>
 						<button class="delete" aria-label="delete"
 							onclick="fadeOut('message'); setTimeout(function() { removeItem('message'); }, 500);"></button>
 					</div>
-					<div class="message-body">
+					<div class="message-body has-text-centered-mobile">
 
 						Click <a
 							onclick="location.href='http://www.citationmachine.net/mla/cite-a-website/search?q=https%3A%2F%2Fwww.scrum.org%2F&style=mla&utm_source=owl-text'">
-							here</a> to access a citation generator. Then, simply click "Add Work Cited" at the bottom of
+							here</a> to access a citation generator. Then, simply click "Add Works Cited" at the bottom of
 						this page, scroll up to the input area, and paste in your completed citations - skipping a line
-						after each entry. Finally, click "Update Citations" to finish your paper.
+						after each entry. Finally, click "Generate" to finish your paper.
 
 					</div>
 				</article>
@@ -186,30 +186,29 @@
 						<div class="field">
 							<div class="control">
 
-								<textarea class="textarea" type="text" id="workCited"
+								<textarea class="textarea" type="text" id="worksCited" style="display: none"
 									placeholder="Cervantes Saavedra, Miguel de, 1547-1616. The Adventures of Don Quixote De La Mancha. New York :Farrar, Straus, Giroux, 1986"
 									rows=3></textarea>
 							</div>
 						</div>
 					</div>
 				</div>
-				<nav class="level is-mobile">
+				<nav class="level">
 					<div class="level-left">
-						<p class="level-item zoom"><button class="button is-blue " id="toggleWorkCited"
-								href="about.html" onclick="toggleWorkCited();" ;>Add Work Cited<i
+						<p class="level-item zoom" ><button class="button is-blue " id="toggleWorksCited"
+								href="about.html" onclick="toggleWorksCited();" ;>Add Works Cited<i
 									class="fas fa-book has-small-margin-left"></i> </button>
 						</p>
 					</div>
 
 					<div class="level-right">
-						<p class="level-item zoom"><button class="button is-text"
-								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents']);">Clear
-								Fields</button>
+						<p class="level-item zoom"><button class="button is-blue"
+						onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents', 'worksCited']);"> Clear 
+								Fields <i class="fas fa-eraser has-small-margin-left"></i> </button>
 						</p>
-						<p class="level-item zoom "><button class="button is-blue" onclick="generatePaper()">Generate <i
+						<p class="level-item zoom " style="margin: inherit"><button class="button is-blue" onclick="generatePaper()">Generate <i
 									class="fas fa-file-upload has-small-margin-left"></i> </button>
 						</p>
-
 
 					</div>
 				</nav>
@@ -225,13 +224,13 @@
 				<embed class="embed" type="application/pdf" style="margin-bottom: 1.05rem">
 
 				</embed>
-				<nav class="level is-mobile has-text">
+				<nav class="level has-text">
 					<div class="level-left">
 
 					</div>
-					<div class="level-right">
+					<div class="level-right" style="margin-top: 0.8rem">
 
-						<p class="level-item zoom"><button class="button is-blue download"
+						<p class="level-item zoom"><button class="button is-blue download" 
 								onclick="downloadFile(lastBlob, getDocumentTitle());">Download<i
 									class="fas fa-download has-small-margin-left"></i></button></p>
 
