@@ -205,11 +205,11 @@ function removeItem(id) {
 function toggleWorksCited() {
    var x = document.getElementById("worksCited");
    if (x.style.display === "none") {
-      document.getElementById("toggleWorksCited").textContent = 'Remove Works Cited'
+      document.getElementById("toggleWorksCited").innerHTML = 'Remove Works Cited<i class="fas fa-book has-small-margin-left"></i>'
       x.style.display = "block";
       makeWorksCited = true;
    } else {
       x.style.display = "none";
-      document.getElementById("toggleWorksCited").textContent = 'Add Works Cited'
+      document.getElementById("toggleWorksCited").innerHTML = 'Add Works Cited<i class="fas fa-book has-small-margin-left"></i>'
    }
 }
