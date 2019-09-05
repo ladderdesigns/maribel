@@ -121,8 +121,8 @@ html {
 }
 
 .has-small-margin-top {
-	margin-top: 2rem !important;
-	margin-bottom: 10px !important;
+	margin-top: 2.75rem !important;
+	/* margin-bottom: 2rem !important; */
 }
 
 #citations {

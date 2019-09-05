@@ -112,12 +112,12 @@
 		<div class="container">
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 				<article class="message tile" style="display: block;" id="message">
-					<div class="message-header has-text-centered is-blue">
+					<div class="message-header is-blue has-text-centered-mobile">
 						<p> Directions for Adding Citations</p>
 						<button class="delete" aria-label="delete"
 							onclick="fadeOut('message'); setTimeout(function() { removeItem('message'); }, 500);"></button>
 					</div>
-					<div class="message-body">
+					<div class="message-body has-text-centered-mobile">
 
 						Click <a
 							onclick="location.href='http://www.citationmachine.net/mla/cite-a-website/search?q=https%3A%2F%2Fwww.scrum.org%2F&style=mla&utm_source=owl-text'">
@@ -228,9 +228,9 @@
 					<div class="level-left">
 
 					</div>
-					<div class="level-right">
+					<div class="level-right" style="margin-top: 0.8rem">
 
-						<p class="level-item zoom"><button class="button is-blue download"
+						<p class="level-item zoom"><button class="button is-blue download" 
 								onclick="downloadFile(lastBlob, getDocumentTitle());">Download<i
 									class="fas fa-download has-small-margin-left"></i></button></p>
 
