@@ -1,16 +1,9 @@
 // author: Jacob Patel
 
 var lastBlob = {};
-
-
-// This is not a constructor.
-
 var currentPage;
-
 var documentTitle;
-
 var makeWorksCited = false;
-
 var documentTitle;
 
 // Main tool for generating the paper.
@@ -29,8 +22,7 @@ function generatePaper() {
    var stream = doc.pipe(blobStream());
 
    // Set document MLA guidelines.
-   doc
-      .fontSize(12)
+   doc.fontSize(12)
       .font('Times-Roman')
       .lineGap(24)
 
@@ -56,59 +48,50 @@ function generatePaper() {
 
    // Configure the heading in the top left corner.
    if (currentPage == 1) {
-      doc
-         .text(studentName, 72, 72)
+      doc.text(studentName, 72, 72)
          .text(profName, 72, 108)
          .text(className, 72, 144)
          .text(dueDate, 72, 180)
          .text(paperTitle, {
             align: 'center'
-         }
-         );
-
+         });
    }
 
-   doc
-      .text(paperContents)
+   doc.text(paperContents);
 
    // edit the document's metadata
    if (paperTitle != "") {
-      doc
-      .info['Title'] = paperTitle
+      doc.info['Title'] = paperTitle;
    } else {
-      doc
-      .info['Title'] = 'Maribel - MLA Formatter'
+      doc.info['Title'] = 'Maribel - MLA Formatter';
    }
 
 
    // Set the name to be saved of the document.
-   documentTitle = paperTitle
+   documentTitle = paperTitle;
 
    // Add the Works Cited page.
-
    if (makeWorksCited) {
-      citations = document.getElementById('worksCited').value,
+      citations = document.getElementById('worksCited').value;
+      citations = citations.split('\n');
+      citations = citations.filter(c => String(c).trim()); //remove empty citations
+      console.log(citations);
+      doc.addPage()
+         .text('Works Cited', {
+            align: 'center'
+         });
 
-         doc
-            .addPage()
-            .text('Works Cited', {
-               align: 'center'
-            }
-            )
+      var pos = 72;
+      var lineInc = 36;
+      let w = doc.page.width - 72 - 72;
+      for (x = 0; x < citations.length; x++) {
+         console.log(doc.widthOfString(citations[x]));
+         console.log(w);
+         // TODO: implement string break up function, then write the broken up lines one by one
+         // var brokenCitation = breakLine(citations[x], w);
+         // TODO: loop over brokenCitation, writing each line to document, but each line after the first has a \t character prepended to it
+      }
    }
-
-
-
-
-   var x;
-   // for (x = 0; indivCitations.length; x++) {
-   //    doc.text(indivCitations[x], {
-   //       align: 'left'
-   //    }
-   //    );
-   //    x++;
-   // }
-
 
    // End and display the document in the iframe to the right
    doc.end();
@@ -124,17 +107,25 @@ function generatePaper() {
    });
 }
 
+//TODO: implement this
+// given a string str and a int width, return an array of strings that is created by splitting up the original string into
+// smaller strings that have a width less than the given width, but only on spaces
+// example: breakLine("This is an example string.", 10) -> ["This is an", "example", "string."]
+function breakLine(str, width) {
+
+}
+
 function getDocumentTitle() {
    if (documentTitle == "") {
-      return "Maribel - MLA Formatter"
+      return "Maribel - MLA Formatter";
    } else {
       return documentTitle;
    }
 }
 
 function getLastName(fullName) {
-   lastName = fullName.substring(fullName.indexOf(' ')+1)
-   return lastName
+   lastName = fullName.substring(fullName.indexOf(' ')+1);
+   return lastName;
 }
 
 const downloadFile = (blob, fileName) => {
@@ -152,7 +143,6 @@ const downloadFile = (blob, fileName) => {
 
 // Clear all user inputted fields.
 function clearFields(idArray) {
-
    idArray.forEach(id => {
       document.getElementById(id).value = "";
    });
@@ -187,13 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function fadeOut(id) {
    var elem = document.getElementById(id);
-   elem.className = "fadeOut"
+   elem.className = "fadeOut";
    return false;
 }
 
 function fadeIn(id) {
    var elem = document.getElementById(id);
-   elem.className = "fadeIn"
+   elem.className = "fadeIn";
    return false;
 }
 
@@ -205,11 +195,11 @@ function removeItem(id) {
 function toggleWorksCited() {
    var x = document.getElementById("worksCited");
    if (x.style.display === "none") {
-      document.getElementById("toggleWorksCited").innerHTML = 'Remove Works Cited<i class="fas fa-book has-small-margin-left"></i>'
+      document.getElementById("toggleWorksCited").innerHTML = 'Remove Works Cited<i class="fas fa-book has-small-margin-left"></i>';
       x.style.display = "block";
       makeWorksCited = true;
    } else {
       x.style.display = "none";
-      document.getElementById("toggleWorksCited").innerHTML = 'Add Works Cited<i class="fas fa-book has-small-margin-left"></i>'
+      document.getElementById("toggleWorksCited").innerHTML = 'Add Works Cited<i class="fas fa-book has-small-margin-left"></i>';
    }
 }
