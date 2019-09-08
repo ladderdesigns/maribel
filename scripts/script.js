@@ -72,14 +72,34 @@ function generatePaper() {
 
    // Add the Works Cited page.
    if (makeWorksCited) {
-      citations = document.getElementById('worksCited').value;
-      citations = citations.split('\n');
-      citations = citations.filter(c => String(c).trim()); //remove empty citations
-      console.log(citations);
       doc.addPage()
          .text('Works Cited', {
             align: 'center'
          });
+      citations = document.getElementById('worksCited').value;
+      citations = citations.split('\n');
+      citations = citations.filter(c => String(c).trim()); //remove empty citations
+      alert(citations);
+
+      var x;
+      var firstRun = true;
+      for (x = 0; x < str.length; x++) {
+         if (firstRun) {
+            if ((str.charAt(x) != null && !str.charAt(x).trim().isEmpty()) || (str.charAt(x + 1) != null && !str.charAt(x + 1).trim().isEmpty())) {
+               if (runningString < doc.widthOfString(runningString)) {
+                  runningString += str.charAt(x)
+               }
+               
+            } else {
+               firstRun = false;
+               runningString = ""
+               break;
+            }
+         } else {
+            break;
+         }
+
+      }
 
       var pos = 72;
       var lineInc = 36;
@@ -124,7 +144,7 @@ function getDocumentTitle() {
 }
 
 function getLastName(fullName) {
-   lastName = fullName.substring(fullName.indexOf(' ')+1);
+   lastName = fullName.substring(fullName.indexOf(' ') + 1);
    return lastName;
 }
 
