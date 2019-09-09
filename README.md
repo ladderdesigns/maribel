@@ -28,7 +28,7 @@ Thank you Mom for continuously cheering on my learning. You are my biggest fan, 
 
 ## Deployment
 
-This website can be reached at [maribel.io](maribel.io).
+This website can be reached at [https://maribel.io](maribel.io).
 
 ## License
 
