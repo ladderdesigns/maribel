@@ -24,7 +24,7 @@ function generatePaper() {
    // Set document MLA guidelines.
    doc.fontSize(12)
       .font('Times-Roman')
-      .lineGap(24)
+      .lineGap(12)
 
    doc.on('pageAdded', function () {
       doc.moveUp()
@@ -90,7 +90,7 @@ function generatePaper() {
             if (y >= 1) {
                doc.text(brokenCitation[y], {
                   align: 'left',
-                  indent: 61 - 1
+                  indent: 60
                });
             } else {
                doc.text(brokenCitation[y], {
