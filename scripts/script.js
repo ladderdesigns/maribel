@@ -79,36 +79,26 @@ function generatePaper() {
       citations = document.getElementById('worksCited').value;
       citations = citations.split('\n');
       citations = citations.filter(c => String(c).trim()); //remove empty citations
-      alert(citations);
-
-      var x;
-      var firstRun = true;
-      for (x = 0; x < str.length; x++) {
-         if (firstRun) {
-            if ((str.charAt(x) != null && !str.charAt(x).trim().isEmpty()) || (str.charAt(x + 1) != null && !str.charAt(x + 1).trim().isEmpty())) {
-               if (runningString < doc.widthOfString(runningString)) {
-                  runningString += str.charAt(x)
-               }
-               
-            } else {
-               firstRun = false;
-               runningString = ""
-               break;
-            }
-         } else {
-            break;
-         }
-
-      }
 
       var pos = 72;
       var lineInc = 36;
       let w = doc.page.width - 72 - 72;
       for (x = 0; x < citations.length; x++) {
-         console.log(doc.widthOfString(citations[x]));
-         console.log(w);
-         // TODO: implement string break up function, then write the broken up lines one by one
-         // var brokenCitation = breakLine(citations[x], w);
+         var brokenCitation = breakLine(citations[x], w, doc);
+         console.log(brokenCitation);
+         for (y = 0; y < brokenCitation.length; y++) {
+            if (y >= 1) {
+               doc.text(brokenCitation[y], {
+                  align: 'left',
+                  indent: 61 - 1
+               });
+            } else {
+               doc.text(brokenCitation[y], {
+                  align: 'left'
+               });
+            }
+            
+         }
          // TODO: loop over brokenCitation, writing each line to document, but each line after the first has a \t character prepended to it
       }
    }
@@ -131,9 +121,31 @@ function generatePaper() {
 // given a string str and a int width, return an array of strings that is created by splitting up the original string into
 // smaller strings that have a width less than the given width, but only on spaces
 // example: breakLine("This is an example string.", 10) -> ["This is an", "example", "string."]
-function breakLine(str, width) {
+/* Derwing, T. M., Rossiter, M. J., & Munro, M. J. (2002). Teaching native speakers to listen to foreign-accented speech. Journal of Multilingual and Multicultural Development, 23(4), 245-259. */
 
+function breakLine(str, width, doc) {
+   var lines = [];
+   while (doc.widthOfString(str) > width) {
+      var firstSpace = str.indexOf(" ");
+      while (doc.widthOfString(str.substring(0,firstSpace+1)) < width) {
+         var substr = str.substring(0,firstSpace+1);
+         var nextSpace = str.indexOf(" ", firstSpace+1);
+         if (doc.widthOfString(str.substring(0, nextSpace+1)) > width) {
+            if (lines.length == 0) {
+               width -= 72;
+            }
+            lines.push(str.substring(0, firstSpace));
+            str = str.substring(firstSpace+1);
+            break;
+         }
+         firstSpace = nextSpace;
+      }
+   }
+   lines.push(str);
+   return lines;
 }
+
+// color brackets
 
 function getDocumentTitle() {
    if (documentTitle == "") {
