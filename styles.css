@@ -70,9 +70,10 @@ a.navSelect:hover:not(.is-nav-active) {
 	justify-content: center;
 }
 
-.embed {
+.object {
 	width: 100% !important;
 	height: 500px !important;
+	color: red !important; 
 
 }
 

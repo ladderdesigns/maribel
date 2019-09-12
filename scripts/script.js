@@ -107,13 +107,13 @@ function generatePaper() {
    doc.end();
 
    stream.on('finish', function () {
-      var iframe = document.querySelector('embed');
+      var iframe = document.querySelector('object');
       // get a blob you can do whatever you like with
-      const blob = stream.toBlob('application/pdf');
+      const blob = stream.toBlob('application/jpg');
       // or get a blob URL for display in the browser
       const url = stream.toBlobURL('application/pdf');
       lastBlob = blob;
-      iframe.src = url;
+      iframe.data = url;
    });
 }
 
