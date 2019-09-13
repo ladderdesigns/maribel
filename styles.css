@@ -31,8 +31,18 @@ body {
 	font-weight: 800  !important;
 }
 
-.has-tile-padding {
-	padding: 3.5rem !important;
+@media (max-width: 768px) {
+	.has-tile-padding {
+		padding: 1.5rem !important;
+	}
+
+}
+
+@media (min-width: 768px) {
+	.has-tile-padding {
+		padding: 3.5rem !important;
+	}
+
 }
 
 .has-open-sans {
