@@ -22,9 +22,9 @@ function generatePaper() {
    var stream = doc.pipe(blobStream());
 
    // Set document MLA guidelines.
-   doc.fontSize(12)
+   doc.fontSize(11)
       .font('Times-Roman')
-      .lineGap(18)
+      .lineGap(15)
 
    doc.on('pageAdded', function () {
       doc.moveUp()
@@ -49,9 +49,9 @@ function generatePaper() {
    // Configure the heading in the top left corner.
    if (currentPage == 1) {
       doc.text(studentName, 72, 72)
-         .text(profName, 72, 108)
-         .text(className, 72, 144)
-         .text(dueDate, 72, 180)
+         .text(profName, 72, 99)
+         .text(className, 72, 126)
+         .text(dueDate, 72, 153)
          .text(paperTitle, {
             align: 'center'
          });
