@@ -24,7 +24,7 @@ function generatePaper() {
    // Set document MLA guidelines.
    doc.fontSize(12)
       .font('Times-Roman')
-      .lineGap(12)
+      .lineGap(18)
 
    doc.on('pageAdded', function () {
       doc.moveUp()
@@ -109,7 +109,7 @@ function generatePaper() {
    stream.on('finish', function () {
       var iframe = document.querySelector('object');
       // get a blob you can do whatever you like with
-      const blob = stream.toBlob('application/jpg');
+      const blob = stream.toBlob('application/pdf');
       // or get a blob URL for display in the browser
       const url = stream.toBlobURL('application/pdf');
       lastBlob = blob;
