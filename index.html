@@ -10,10 +10,20 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Oleo+Script|Open+Sans&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700,800&display=swap" rel="stylesheet">
-	<link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
 	<script type="text/javascript" src="scripts/script.js"></script>
 	<script type="text/javascript" src="scripts/pdfkit.standalone.js"></script>
 	<script type="text/javascript" src="scripts/blob-stream.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148034811-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-148034811-1');
+	</script>
+
 
 </head>
 
@@ -26,10 +36,9 @@
 					<div class="navbar-brand">
 						<div class="navbar-item">
 							<div class="buttons">
-								<a class="button is-danger is-size-4 is-centered-mobile" id="titleLogo"
-									><span> Maribel </span></a>
-								<span class="navSelect is-size-6-mobile" id="titleName"
-									style="margin-bottom: 0.5rem">
+								<a class="button is-danger is-size-4 is-centered-mobile" id="titleLogo"><span> Maribel
+									</span></a>
+								<span class="navSelect is-size-6-mobile" id="titleName" style="margin-bottom: 0.5rem">
 									by Jacob Patel
 
 								</span>
@@ -122,8 +131,10 @@
 
 						Click <a
 							onclick="location.href='http://www.citationmachine.net/mla/cite-a-website/search?q=https%3A%2F%2Fwww.scrum.org%2F&style=mla&utm_source=owl-text'">
-							here</a> to access a citation generator. Then, simply click "Add Works Cited" at the bottom of
-						this page, scroll up to the input area, and paste in your completed citations. Finally, click "Generate" to finish your paper.
+							here</a> to access a citation generator. Then, simply click "Add Works Cited" at the bottom
+						of
+						this page, scroll up to the input area, and paste in your completed citations. Finally, click
+						"Generate" to finish your paper.
 
 					</div>
 				</article>
@@ -195,7 +206,7 @@
 				</div>
 				<nav class="level">
 					<div class="level-left">
-						<p class="level-item zoom" ><button class="button is-blue " id="toggleWorksCited"
+						<p class="level-item zoom"><button class="button is-blue " id="toggleWorksCited"
 								href="about.html" onclick="toggleWorksCited();" ;>Add Works Cited<i
 									class="fas fa-book has-small-margin-left" id='addWorksCitedIcon'></i> </button>
 						</p>
@@ -203,10 +214,12 @@
 
 					<div class="level-right">
 						<p class="level-item zoom"><button class="button is-blue"
-						onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents', 'worksCited']);"> Clear 
+								onclick="clearFields(['studentName', 'className', 'profName', 'dueDate', 'paperTitle', 'paperContents', 'worksCited']);">
+								Clear
 								Fields <i class="fas fa-eraser has-small-margin-left"></i> </button>
 						</p>
-						<p class="level-item zoom " style="margin: inherit"><button class="button is-blue" onclick="generatePaper()">Generate <i
+						<p class="level-item zoom " style="margin: inherit"><button class="button is-blue"
+								onclick="generatePaper()">Generate <i
 									class="fas fa-file-upload has-small-margin-left"></i> </button>
 						</p>
 
@@ -221,7 +234,7 @@
 
 			<div class="tile notification is-child has-background-white-bis has-tile-padding">
 
-				<object class="object" type="application/pdf" style="margin-bottom: 1.05rem" >
+				<object class="object" type="application/pdf" style="margin-bottom: 1.05rem">
 
 				</object>
 				<nav class="level has-text">
@@ -230,7 +243,7 @@
 					</div>
 					<div class="level-right" style="margin-top: 0.8rem">
 
-						<p class="level-item zoom"><button class="button is-blue download" 
+						<p class="level-item zoom"><button class="button is-blue download"
 								onclick="downloadFile(lastBlob, getDocumentTitle());">Download<i
 									class="fas fa-download has-small-margin-left"></i></button></p>
 
