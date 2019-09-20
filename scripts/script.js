@@ -57,15 +57,8 @@ function generatePaper() {
          });
    }
 
-   if ((paperContents != null) & (paperContents.length > 4)) {
-      if (paperContents.substring(0,1).indexOf(" ") < 0) {
-         doc.text("     " + paperContents)
-      } else {
-         doc.text(paperContents)
-      }
-   } else {
-      doc.text(paperContents)
-   }
+   paperContents.trim()
+   doc.text("     " + paperContents)
 
    // edit the document's metadata
    if (paperTitle != "") {
