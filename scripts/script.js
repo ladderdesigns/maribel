@@ -57,7 +57,7 @@ function generatePaper() {
          });
    }
 
-   paperContents.trim()
+   paperContents = paperContents.trim()
    doc.text("     " + paperContents)
 
    // edit the document's metadata
