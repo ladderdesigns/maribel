@@ -1,6 +1,6 @@
 # Maribel - MLA Formatter
 
-*A free, all-in-one MLA formatter for your next paper.*
+*A free, all-in-one MLA formatter for your next paper*
 
 <img src="images/GithubLogo.png" alt="drawing" width="200"/>
 
