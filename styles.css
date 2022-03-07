@@ -70,6 +70,10 @@ a.navSelect:hover:not(.is-nav-active) {
     color: #fff !important;
 }
 
+a#ladderdesigns {
+	text-decoration: underline;
+  }
+
 
 /* intro */
 /* remove inline styling for text from html and put here with good class tags */
