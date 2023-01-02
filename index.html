@@ -21,6 +21,12 @@
 		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 		gtag('config', 'UA-148034811-1');
+		// add current year to tag with id current year
+		window.onload = addYear;
+		function addYear() {
+			const year = new Date().getFullYear();
+			document.getElementById("currentYear").innerHTML = year;
+		}
 	</script>
 </head>
 
@@ -257,16 +263,15 @@
 	<footer class="footer" style="text-align: center;">
 		<div class="content">
 			<div class="container">
+
 				<p class="">
-					&copy; Created by 2022
-					
-					<a
-					  class="has-text-weight-bold"
-					  id="ladderdesigns"
-					  href="https://ladderdesigns.co"
-					>
-					Ladder Designs</a>. All rights reserved.
-				  </p>
+					Created by
+					<a class="has-text-weight-bold" id="ladderdesigns" href="https://ladderdesigns.co">
+						Ladder Designs
+					</a>
+					&copy; <span id="currentYear"></span>. All rights reserved.
+
+				</p>
 			</div>
 		</div>
 	</footer>
